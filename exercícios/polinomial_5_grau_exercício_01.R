@@ -1,6 +1,6 @@
 library(cmrinvflor)
 
-cub <- read.csv2( "aulas/aula_01/cubagem.csv" )
+cub <- read.csv2( "exercícios/cubagem.csv" )
 names( cub )
 
 par( mfrow = c( 1, 2 ) )
@@ -29,8 +29,9 @@ ajnlin <- nls("dicc ~ dap *
               + b5 * ( (hi/ht) ^ 5 ) 
               )",
               cub,
-              start = list( b0 = 1.7, b1 = -4, b2 = 19, b3 = -43, b4 = 41, b5= -14) )
+              start = list( b0 = bs[ 1 ], b1 = bs[ 2 ], b2 = bs[ 3 ], 
+                            b3 = bs[ 4 ], b4 = bs[ 5 ], b5 = bs[ 6 ]) )
 
-format( as.numeric( coef( ajnlin ) ), decimal.mark = ",")
-
-
+for ( i in 1:6 ){
+  print( format( as.numeric( bs[i] ), decimal.mark = "," ) )
+}
