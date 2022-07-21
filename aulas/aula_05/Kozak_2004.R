@@ -7,8 +7,8 @@
 #' # Abrindo a base de dados
 #' #### Arquivo `5grau.rda` possui resultados aplicados ao polinômio de quinto grau para comparação futura...
 
-arv <- read.csv2( "cubfinal.csv" )
-load( file = "5grau.rda" )
+arv <- read.csv2( "aulas/aula_05/cubfinal.csv" )
+load( file = "aulas/aula_05/5grau.rda" )
 
 #' ### Criando uma função com o modelo proposto.
 fkozak <- function( hi, dap, ht, b0, b1, b2, b3, b4, b5, b6, b7, b8 ) {
