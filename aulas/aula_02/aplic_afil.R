@@ -7,7 +7,7 @@ produtos <- read.xlsx( "aulas/aula_02/aplic_5grau_r.xlsx", sheet = "produtos" )
 
 subseq <- 1
 
-nonprod <- as.matrix( produtos[, 1] )
+nomprod <- as.matrix( produtos[, 1] )
 vprod <- as.matrix( produtos[, 2:5] )
 
 procafill <- as.data.frame(
