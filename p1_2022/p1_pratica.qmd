@@ -43,21 +43,21 @@ id1 <- 3.7 * 12
 ab1 <- 25.08
 s <- 25
 
-#agora quero saber a proje??o de crescimento 
-# a unica variavel eh a id2, que vai ser chamada de x
+#agora quero saber a projeção de crescimento 
+# a única variável é a id2, que será chamada de x
 
-#equa??o de volume
-eqvol<-expression(exp(b0+b1/s+b2/x+b3*(id1/x)*log(ab1)+                         
-                        b4*(1-id1/x)+b5*(1-id1/x)*s));
+#equação de volume
+eqvol <- expression( exp(b0+b1/s+b2/x+b3*(id1/x)*log(ab1)+                         
+                           b4*(1-id1/x)+b5*(1-id1/x)*s) )
 
-#derivada da equa??o de volume em fun??o da idade(x) o ica
-#D(eqvol,'x');
+#derivada da equação de volume em função da idade(x) o ica
+#D( eqvol, "x" );
 
 # a derivada da equação de volume que eh o ica
 der_eqvol <- expression(
-  exp(b0 + b1/s + b2/x + b3 * (id1/x) * log(ab1) + b4 * (1 - id1/x) + 
-        b5 * (1 - id1/x) * s) * (b4 * (id1/x^2) - (b3 * (id1/x^2) * 
-                                                     log(ab1) + b2/x^2) + b5 * (id1/x^2) * s))
+  exp( b0 + b1/s + b2/x + b3 * (id1/x) * log(ab1) + b4 * (1 - id1/x) + 
+         b5 * (1 - id1/x) * s) * (b4 * (id1/x^2) - (b3 * (id1/x^2) * 
+                                                      log(ab1) + b2/x^2) + b5 * (id1/x^2) * s) )
 vtcc <- function( x ) ( eval( eqvol ) )
 
 icm <- function( x )( eval( der_eqvol ) )
@@ -88,6 +88,5 @@ abline( v = iocs * 12, col = "white", lty = 2 )
 legend( "topright", c( "ica", "ima", "corte" ), text.col = c( "red", "green", "white" ), box.lty = 0,
         col = c( "red", "green", "white" ), lty = c( 1, 1, 2 ) )
 text( iocs * 12, imn( iocs ) * 12, paste( round( iocs, 2 ), " anos" ), cex = 0.8, col = "white" )
-#text( locator( 1 ), paste0( round( iocs, 2 ), " anos"), cex = 0.8, col = "white" )
 ```
 
