@@ -1,0 +1,66 @@
+---
+title: "Prova 01 - Prática B"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+---
+
+# Ajuste diâmetro sem casca
+
+```{r}
+library( cmrinvflor )
+
+cub <- read.csv2( "cubagem.csv" )
+
+ajlin <- lm( I( disc/dap ) 
+             ~ I( ( hi/ht )^1 ) 
+             + I( ( hi/ht )^2 ) 
+             + I( ( hi/ht )^3 ) 
+             + I(( hi/ht )^4 ) + I(( hi/ht )^5), data = cub )
+
+bs <- coef( ajlin )
+
+ajnlin <- nls("disc ~ dap * 
+              ( b0 + b1 * (hi/ht) 
+              + b2 * ( (hi/ht) ^ 2) 
+              + b3 *( (hi/ht) ^ 3) 
+              + b4 *( (hi/ht) ^ 4) 
+              + b5 * ( (hi/ht) ^ 5 ) 
+              )",
+              cub,
+              start = list( b0 = 1.7, b1 = -4, b2 = 19, b3 = -43, b4 = 41, b5= -14) )
+
+bsnl <- coef( ajnlin )
+
+for ( i in 1:6 ){
+  print( noquote( format( bsnl[ i ], decimal.mark = "," ) ) )
+}
+```
+
+# Cálculo do metro estéreo
+
+```{r}
+library( openxlsx )
+library( xlsx )
+library( cmrinvflor )
+
+fustes <- read.xlsx( "tioze.xlsx", sheetName  = "fustes" )
+coefs <- read.xlsx( "tioze.xlsx", sheetName = "coeficientes" )
+produtos <- read.xlsx( "tioze.xlsx", sheetName = "produtos" )
+subseq <- 1
+
+nonprod <- as.matrix( produtos[, 1 ] )
+vprod <- as.matrix( produtos[, 2:5 ] )
+
+procafill <- as.data.frame(
+  multprodarvbt5grau( fustes, coefs, vprod, nonprod, subseq )
+)
+
+procafill <- merge( fustes, procafill, by = "idfustemed" )
+
+round( sum( procafill$vprodiproduto1 ) * 1.67, 2 )
+round( sum( procafill$vprodiproduto1 ), 2 )
+
+```
+

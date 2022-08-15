@@ -1,0 +1,93 @@
+---
+title: "Prova 01 - Prática"
+author: Gabriel de Freitas Pereira
+author-title: Autor
+number-sections: true
+highlight-style: pygments
+execute:
+  echo: false
+format:
+  pdf:
+    theme: lux
+    toc: true
+    toc-title: Sumário
+    crossref-tbl-title: Tabela
+    number-sections: true
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# (a)
+
+Implementar um inventário contínuo: medindo aproximadamente 25% das alturas totais, assim como o diâmetro de todos indivíduos e as alturas dominantes conforme a definição operacional de Assmann das parcelas. 
+
+A partir disso com a repetição das medições dessas parcelas ao longo dos anos dentro do ciclo de corte, é realizada a classificação de sítio com base nas curvas de crescimento usando métodos como o da diferença algébrica e depois disso será realizada sua reclassificação manual daqueles indivíduos que variaram demasiadamente entre sítios.
+
+Em conseguinte, é feito o ajuste da curva utilizando modelos como o de Bailey e Clutter Polimórfico gerando a curva de produção senoidal, estimando a partir da sua derivada o incremento corrente anual. Com isso, a partir do volume total será estimado o incremento médio mensal, chegando por fim na equação a qual é alcançada através da otimização do incremento médio mensal.
+
+# (b)
+
+```{r}
+
+#' Variáveis independentes (dados da última medição)
+#' Exemplo parcela 19
+b0 <- 2.087605
+b1 <- 18.960836
+b2 <- 10.948749 
+b3 <- 1.368863  
+b4 <- 5.738665  
+b5 <- 0.030832
+
+id1 <- 3.7 * 12
+ab1 <- 25.08
+s <- 25
+
+#agora quero saber a proje??o de crescimento 
+# a unica variavel eh a id2, que vai ser chamada de x
+
+#equa??o de volume
+eqvol<-expression(exp(b0+b1/s+b2/x+b3*(id1/x)*log(ab1)+                         
+                        b4*(1-id1/x)+b5*(1-id1/x)*s));
+
+#derivada da equa??o de volume em fun??o da idade(x) o ica
+#D(eqvol,'x');
+
+# a derivada da equação de volume que eh o ica
+der_eqvol <- expression(
+  exp(b0 + b1/s + b2/x + b3 * (id1/x) * log(ab1) + b4 * (1 - id1/x) + 
+        b5 * (1 - id1/x) * s) * (b4 * (id1/x^2) - (b3 * (id1/x^2) * 
+                                                     log(ab1) + b2/x^2) + b5 * (id1/x^2) * s))
+vtcc <- function( x ) ( eval( eqvol ) )
+
+icm <- function( x )( eval( der_eqvol ) )
+
+imn <- function( x )( vtcc( x )/( x ))
+
+op <- optimize( f = imn, interv = c( 12,120 ), maximum = T )
+iocs <- op$maximum
+
+iocs <- iocs/12
+#' Definição da idade ótima de corte silvicultural
+
+#' Adicionando idade ótima de corte no gráfico
+par( mfrow = c( 2, 1 ),
+     pch = 20,
+     mai = c( 0.8, 0.9, 0.3, 0.2 ),
+     bg = "#171717",
+     col.axis = "white",
+     col.lab = "white",
+     col.main = "white",
+     fg = "white",
+     bty = "l" )
+curve( vtcc( x ), 12, 120, xlab = "", ylab = "vtcc (m³/ha)" )
+curve( icm( x )* 12, 12, 120, xlab = "idade (meses)", ylab = "icm (m³/ha.ano)", col = "red" )
+curve( imn( x )* 12, 12, 120, xlab = "idade (meses)", ylab = "ima (m³/ha.ano)", add = TRUE, col = "green" )
+par( xpd = NA )
+abline( v = iocs * 12, col = "white", lty = 2 )
+legend( "topright", c( "ica", "ima", "corte" ), text.col = c( "red", "green", "white" ), box.lty = 0,
+        col = c( "red", "green", "white" ), lty = c( 1, 1, 2 ) )
+text( iocs * 12, imn( iocs ) * 12, paste( round( iocs, 2 ), " anos" ), cex = 0.8, col = "white" )
+#text( locator( 1 ), paste0( round( iocs, 2 ), " anos"), cex = 0.8, col = "white" )
+```
+

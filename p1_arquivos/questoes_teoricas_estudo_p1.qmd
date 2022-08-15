@@ -1,0 +1,102 @@
+---
+title: "Possíveis questões teóricas P1"
+author: Gabriel de Freitas Pereira
+author-title: Autor
+number-sections: true
+highlight-style: pygments
+execute:
+  echo: false
+format:
+  pdf:
+    theme: lux
+    toc: true
+    toc-title: Sumário
+    crossref-tbl-title: Tabela
+    number-sections: true
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Curvas anamórficas e polimórficas 
+
+**Diferencie curvas anamórficas de polimórficas. Qual destes dois tipos de curvas é a mais esperada para a relação altura dominante em função da idade em florestas equiâneas? Justifique.**
+
+Nas curvas anamórficas, os coeficientes que representam a inclinação da curva (betas) são constantes para todas as curvas de sítio. Por isso, as curvas anamórficas é precisa somente quando a amostragem é adequadamente realizada, de forma que a variação do índice de sítio seja igualmente representada em todas as idades. Considere que a influência da variação das curvas de sítio sobre a altura é a mesma para todas as idades. As curvas polimórficas consideram que há diferenciação no crescimento das alturas representadas em diferentes idades, em distintos sítios, é o mais próximo do real. Espera-se que as curvas polimórficas representem a relação das alturas dominantes em função de florestas com a mesma idade, pois há proporcionalidade, mas nenhuma árvore é 100% igual a outra.
+
+**Se tenho inventário contínuo ou temporário, qual modelo será melhor: Anamórfico ou Polimórfico?**
+
+Polimórfico (contínuo)
+
+Anamórfico (temporário)
+
+As árvores que crescem mais no início tendem a ser dominantes e as que demoram um pouco mais, tendem a ser dominadas (sofrem com a competição). Então a tendência é que as curvas de sítio tenham um padrão polimórfico, como é melhor ajustado em parcelas permanentes.
+No caso de parcelas temporárias, não são necessariamente as mesmas árvores que são medidas, ou seja, a variação das alturas não se deve somente devido ao sítio. Dessa forma, a tendência é que as curvas anamórficas apresentem melhor ajuste. 
+
+# IOC
+
+**Explique como é definida a idade ótima de corte silvicultura.**
+
+Utilizando-se das equações de produção (estimadas em anos) de ICA (Incremento corrente anual) e IMA (Incremento médio anual), a idade ótima de corte é a idade onde o ICA e o IMA se cruzam. Neste ponto, o incremento corrente anual tende a puxar a curva do IMA para baixo, não sendo mais vantajoso os valores de incremento médio (volume de madeira). 
+
+# Espaçamento 3x2m ou 3x3m
+
+**Um produtor florestal afirmou que em um mesmo sítio, com um único material genético e os mesmos tratos silviculturais, obteve um volume de madeira maior no espaçamento 3x3m em detrimento do espaçamento 3x2m. Esta afirmação está correta? Qual a explicação técnica que você daria para este produtor?**
+
+Não está correta, pois não pode avaliar o volume de plantios com espaçamentos distintos, uma vez que as idades ótimas silviculturais também são distintas. O correto para poder avaliar os dois plantios seria colocar cada um em sua idade de corte e extrapolá-la para o futuro  para que a idade ótima de corte sejam iguais e assim veria que o espaçamento 3x2 m produzia mais. Tem que comparar cada um na idade ótima de corte em ciclo infinito pois um entra em competição antes do outro. 
+
+# Qualidade do sítio
+
+**Ao adotar um único sistema de manejo florestal para um cultivar de *Eucalyptus* sp. a idade de corte ideal do ponto de vista silvicultural é diretamente ou inversamente proporcional à qualidade do sítio? Justifique**
+
+Inversamente proporcional. Quanto maior a qualidade do sítio, mais rápido as curvas de IMA e ICA irão se cruzar, ou seja, menor será a idade com rendimento ótimo para o corte - mais rápido é a competição.
+
+**Sabendo que o sítio é bom o que deve ser feito com o espaçamento?**
+
+Abrir mais o espaçamento, pois se isso não for feito as árvores cresceriam rápido demais e poderiam não ter as características necessárias para o uso da madeira.
+
+
+# Afilamento e Volume 
+
+**Diferencie as funções de afilamento das equações de volume através das formas de ajuste e aplicação.**
+
+Funções de afilamento = curvas que modelam o perfil da árvore, portanto você pode estimar multiprodutos. Você usa os dados brutos da cubagem rigorosa.
+Equações de volume = é uma equação em que a variável volume de interesse é correlacionada diretamente com diâmetro e altura (modelo de dupla entrada). É necessário aplicar métodos como smaller, por exemplo, para depois fazer o ajuste.
+
+
+# Tratos silviculturais
+
+**Como você utilizaria as curvas de crescimento nas definições de tratos silviculturais?**
+
+Para mudar o espaçamento, mudar o material genético, mudar a adubação, para a decisão de não plantar mais no local.
+Olhar as curvas de crescimento e ver o que ela pode falar em relação ao ciclo atual e principalmente em relação ao ciclo futuro.
+
+
+**Como chegar na equação - prova prática**
+
+Implementar um inventário contínuo: mede aprox. 25% das alturas totais, mede o diâmetro de todas e as alturas dominantes conforme o conceito de asmam de todas as parcelas. Com a repetição dessa parcela ao longo do tempo faz a classificação de sítio e após isso faz o ajuste da curva e chega-se a equação.
+
+
+**Diferencie os regimes de mono produto, bi produto e multiproduto.**
+
+Mono produto = Pulpwood - sem desbastes, nem poda, para madeira fina (rotações curtas).
+Bi produto = Utility - 1 ou 2 desbastes, sem poda, madeira com nó - para serraria (rotações médias).
+Multiproduto = Clearwood - 1 a 3 desbastes, 1 ou mais podas - madeira clean, sem nó (rotações longas).
+
+
+**Observações:**
+
+É necessário modelar a hdom através da proporção da idade
+
+método curva média - necessário idades variando dentro do ciclo (só gera curvas anamórficas)
+curvas anamórficas, são curvas que apenas o intercepto muda e o beta1 não altera
+
+diferença algébrica - olha para a dependência entre as medições, pode gerar
+polimórficas e anamórficas.
+
+com parcelas temporárias é possível gerar curvas polimórficas, 
+porém o método é ruim...
+
+regressão quantílica não é influenciada por extremos, ou seja, não é afetada por outliers,
+e gera curvas com base nos percentis (qual quiser).
+
