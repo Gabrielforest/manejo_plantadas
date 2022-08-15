@@ -146,5 +146,5 @@ par( xpd = NA )
 abline( v = iocs * 12, col = "white", lty = 2 )
 legend( "topright", c( "ica", "ima", "corte" ), text.col = c( "red", "green", "white" ), box.lty = 0,
         col = c( "red", "green", "white" ), lty = c( 1, 1, 2 ) )
-#text( locator( 1 ), paste0( round( iocs * 12, 2 ), " meses"), cex = 0.8, col = "white" )
+text( locator( 1 ), paste0( round( iocs, 2 ), " anos"), cex = 0.8, col = "white" )
 #text( iocs * 12, imn( iocs ) * 12, paste( round( iocs, 2 ), " anos" ), cex = 0.8, col = "white" )

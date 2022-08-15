@@ -3,6 +3,7 @@
 #'subtitle: Curvas de sítio método da diferença algébrica (Bailey e Clutter Polimórfico)
 #'author: Gabriel F. Pereira
 #'---
+library( cmrinvflor )
 
 #' ### Importando arquivo e adequando base para função do pacote cmrinvflor
 ifc <- read.csv2( "aulas/aula_03/ifc.csv" )
@@ -22,3 +23,11 @@ cls <- class_sitio_dif_alg( amostras = ifc,
                             iref = 72, 
                             graf_curvas = TRUE )
 
+cls$estabilidade
+cls$classes
+View( cls$amostras )
+
+write.csv2( cls$amostras, "reclassificação.csv", row.names = F )
+shell.exec( "reclassificação.csv" )
+
+detach( "package:cmrinvflor", unload = TRUE )

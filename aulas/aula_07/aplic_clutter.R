@@ -54,7 +54,6 @@ imn( 60 )
 
 par( mfrow = c( 2, 1 ),
      pch = 20,
-     mai = rep( 4, 0.1 ),
      bg = "#171717",
      col.axis = "white",
      col.lab = "white",
@@ -104,12 +103,12 @@ par( mfrow = c( 2, 1 ),
      col.main = "white",
      fg = "white",
      bty = "l" )
-curve( vtcc( x ), 12, 120, xlab = "idade (mensal)", ylab = "vtcc (m³/ha)" )
+curve( vtcc( x ), 12, 120, xlab = "", ylab = "vtcc (m³/ha)" )
 curve( icm( x )* 12, 12, 120, xlab = "idade (meses)", ylab = "icm (m³/ha.ano)", col = "red" )
 curve( imn( x )* 12, 12, 120, xlab = "idade (meses)", ylab = "ima (m³/ha.ano)", add = TRUE, col = "green" )
 legend( "topright", c( "ica", "ima" ), text.col = c( "red", "green" ), box.lty = 0,
         col = c( "red", "green" ), lty = c( 1, 1 ) )
 par( xpd = NA )
 abline( v = iocs * 12, col = "white", lty = 2 )
-text( locator( 1 ), paste0( round( iocs * 12, 2 ), " meses"), cex = 0.8, col = "white" )
+text( locator( 1 ), paste0( round( iocs, 2 ), " anos"), cex = 0.8, col = "white" )
 #text( iocs, imn( iocs )* 12, paste( round( iocs * 12, 2 ), " anos" ), cex = 0.8, col = "white" )
