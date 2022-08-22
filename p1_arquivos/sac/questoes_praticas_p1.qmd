@@ -1,0 +1,122 @@
+---
+title: "Prova prática"
+author: Bagaços
+author-title: Autor
+number-sections: true
+highlight-style: pygments
+format:
+  html:
+    theme: journal
+    code-fold: true
+    code-summary: "Mostrar código"
+    toc: true
+    toc-location: left
+    toc-title: Sumário
+    crossref-tbl-title: Tabela
+    number-sections: true
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Exercício 1 - Prova de Manejo de Florestas Plantadas
+
+
+Como você gostou muito de passear em Minas Gerais, depois de alguns meses você retornou na fazenda do
+“Ti Zé”. Segue abaixo a conversa.
+
+
+Ti Zé: “Ocê qui di novo!!”
+
+Você: Oi “Ti Zé”, tudo bem!!.
+
+Ti Zé: “Ocê num vai criditar, mas, o priguiçoso do cumpadi totonho num veio busca os meus 6 calipto (Lembra! Erão 8. As saurvas mataram 2).
+
+Você: Ehh!! caboclo preguiçoso, heim!!.
+
+Ti Zé: “Num é que é mermo. Intão vou pruveitar pra trocar as taubas do chiqueirinho do menguinho. O Seu
+Fábio é um japinha do paraguai que disse que se eu pricisar ele tem uma tar de serra fita que tira estas taubas,
+mas, a ponta mais arriba tem que ter no mírnimo 15cm. Como o menguinho é meio espaçoso, as taubas tem
+que ter 3, 0m de cumprimento”.
+
+Ti Zé: “Anstonte eu medi os meus calipto. O diâmetro na artura do peito é de 30cm (ingordou muito nos
+urtimos meses!!) e a artura total de 32m (Todos são iguarzinhos)”.
+
+Ti Zé: “Eu perguntei pru pufessor Cráudio quantas toras eu posso tirar dos meu 8 calipto, mas, acho que
+ele perdeu o juízo. Ele invio uns tar de betas de um polinômio de 5 grar. Anotei qui num paper os valores:
+b0 = 1, 048679544, b1 = −2, 057677985, b2 = 6, 616804885, b3 = −13, 64405804, b4 = 12, 93663095 e
+b5 = −4, 900475953. Toda vez que óio estes números fico precurpado com o Cráudio. Nem mando mais as
+minhas cachacinhas para não piorar o juízo dele.”
+
+Ti Zé:“Como sei que ocê é entindido, será que ocê pode me dizer quantas toras terei para enviar para o Seu
+Fábio?”.
+
+Ti Zé:“Ahh!! Vou pedir pru pufessor Cráudio uma adionar pro ocê, caso ocê carcule tamém o número de
+taubas de 2, 5cm de espessura que o Seu Fábio vai cunsegui produzir.”
+
+Continue a conversa, mas, lembre que o “Ti Zé” é meu amigo e vou verificar as contas
+
+```{r}
+#Importando arquivos de dados do excel
+
+library( openxlsx )
+
+# Fazer ajuste ------------------------------------------
+
+RA <- 759564
+cub <- read.csv2( "cubagem.csv" )
+cub <- subset( cub, estrato == RA )
+
+ajnlin <- nls( "dicc~dap*(b0+b1*(hi/ht)+b2*(hi/ht)^2+b3*(hi/ht)^3+b4*(hi/ht)^4+b5*(hi/ht)^5)", data = cub,
+               start = list( b0=1.17,b1=-4,b2=20,b3=-43,b4=42,b5=-15 ) )
+
+bs <- coef( ajnlin )
+
+# pegar os betas e colocar na planilha 
+
+for ( i in 1:2 ){
+  print( noquote( format( bs[ i ], decimal.mark = "," ) ) )
+}
+
+
+
+
+# Cálculo do metro estéreo (mst) ------------------------
+
+# organizar arquivo de fustes emn 3 abas
+
+fustes <- read.xlsx( "aplic_5grau_r.xlsx", sheet = "fustes" )
+coefs <- read.xlsx( "aplic_5grau_r.xlsx", sheet = "coeficientes" )
+produtos <- read.xlsx( "aplic_5grau_r.xlsx", sheet = "produtos" )
+
+
+library( cmrinvflor )
+subseq <- 1
+
+nomprod <- as.matrix( produtos[ ,1 ] )
+vprod <- as.matrix( produtos[ ,2:5 ] )
+
+procafil <- multprodarvbt5grau( fustes, coefs, vprod, nomprod, subseq )
+procafil <- as.data.frame( procafil )
+
+procafil$volres <- procafil$vti - ( procafil$vprodiser +
+                                    procafil$vprodipall +
+                                    procafil$vprodiene )  
+
+#adicionou o volume dos residuos pq n?o tinha
+#write.csv2(Procafil,'resafil.csv',row.names=F);
+
+#______________________________________juntar tabela resafil  com tabela de parcelas  (arvores, ta om coluna parcela e resfil por arvores)_________________
+
+# dados=read.csv2('resafil.csv');
+# View(dados);
+# names(dados)
+
+#criar uma nova tabela com volumes juntados por parcela ( pq ta s? por arvore)
+resultados <- aggregate.data.frame(list(vtoco=procafil$vtocoi,vser=procafil$vprodiser,vpal=procafil$vprodipall,
+                                     vener=procafil$vprodiene, volres=procafil$volres, volti=procafil$vti),
+                                list(parcela=procafil$parcela,talhao=procafil$talhao,area=procafil$area,areaparc=procafil$areaparc),sum);
+dados <- as.data.frame( dados )
+
+```
+
