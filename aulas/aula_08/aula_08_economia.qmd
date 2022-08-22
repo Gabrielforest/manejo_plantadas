@@ -1,0 +1,110 @@
+---
+title: "Aula 08"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Valor futuro
+
+VF - cada entrada e saída no final do ciclo
+
+$$VF = VP (i + 1)^t$$ 
+
+Sendo:
+$i$ = Taxa 
+$t$ = Tempo
+
+# Valor presente
+
+VP - cada fluxo e jogar para o presente (ano 0)
+
+$$VP = VF/(1+i)^t$$ 
+
+Sendo: 
+$i$ = Taxa de Juros
+$i$ = Taxa Mínima de Atratividade
+
+O ideal é usar taxas diferentes para cada custo e trazer para o
+presente.
+
+Custo anual da terra é o quanto eu vou ter no final do ano se eu vender
+ela agora, importante saber isso sempre.
+
+Tem que fazer análise de sensibilidade no trabalho, ou seja, pensar em
+todos os cenários possíveis para cada custo. Observação: O custo maior
+tende a ser o transporte.
+
+# Valor presente líquido
+
+$$VPL = VP - VPC$$ 
+
+Sendo:
+$VPC$ = Valor Presente do Custo 
+
+# Valor presente líquido infinito
+
+Considerando que o projeto vai repetir infinitamente.Todo fluxo para o
+futuro (idade de corte) e pega tudo que foi para o futuro e joga para o
+presente
+
+$$
+VPLinf = VP(1+i)^t/(1+i)^t-1  = VP / (1-(1+i)^t)
+$$ 
+
+Sendo:
+
+$t$ em anos e taxa $i$ anual 
+
+ou 
+
+$t$ em meses e taxa $i$ mensal
+
+# Benefício líquido periódico equivalente
+
+$$VPE = VPL(i)/ 1-(1+i)^{-t} = VPLinf(i)$$
+
+# Custo médio de produção
+
+$$CMPi = VFC/Prod$$
+# Benefício custo
+
+$$BC = VP/VPC$$
+Quantas vezes ganha em relação ao que foi investido - semelhante ao VPL.
+
+# Taxa interna de retorno
+
+$$TIR = $$
+
+É a taxa onde $VPL = 0$ ou $VPL = VPC$ ou $BC = 1$
+
+Se for maior que a taxa mínima de atratividade está no lucro, se não
+o negócio não é válido, não significa prejuízo necessariamente, apenas que deixou de ganhar mais na maioria das vezes. A TIR está sempre ligada a TMA e ao valor investido, não
+é possível comparar TIR para diferentes investimentos sem saber o capital investido.
+
+# Valor esperado da terra
+
+$$VET = VPLinf + Custo da terra$$
+
+E o VET é o máximo valor a ser pago pela terra para $VPL = 0$
+a partir desse valor você percebe quanto vale para comprar. Exemplo:
+querem vender por 20 mil, mas meu VET é de 18 mil, logo, se comprar a 
+18 mil não ganho nada, abaixo de 18 mil é lucro e acima de 18 mil é prejuízo.
+
+Qual a semelhança entre TIR e VET? (**prova**)
+
+A premissa do TIR e VET é que o $VPL = 0$.
+
+
+
+
+
+
+
+
+
+
