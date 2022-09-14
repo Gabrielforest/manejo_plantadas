@@ -1,0 +1,111 @@
+---
+title: "Aula 09"
+format:
+  pdf:
+    toc: true
+    number-sections: false
+    lang: pt
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Idade ótima de corte através de análise econômica
+
+```{r, echo = TRUE}
+
+library( cmrinvflor )
+library( openxlsx )
+
+# custo da terra deve ser importado do excel sendo 0!
+fc <- read.xlsx( "rotacao_economica.xlsx", sheet = "Plan2", rowNames = FALSE )
+valor_terra <- 10000
+
+# taxa de juros
+tj <- 0.1
+
+fc$custo_sem_terra <- fc$custo
+ii <- fc$idade != 0
+fc$custo[ ii ] <- fc$custo_sem_terra[ ii ] + valor_terra * tj
+
+# avaliação econômica
+ae <- avecon( fc[, 1:5 ], tj, valor_terra, TRUE )
+j <- match( max( ae$vplinf ), ae$vplinf )
+
+# idade ótima de corte
+plot( ae$projeto, ae$vplinf, type = "l", col = 1 )
+abline( v = ae$projeto[ j ], lty = 2 )
+
+# custo da terra deve ser importado do excel sendo 0!
+fc <- read.xlsx( "rotacao_economica.xlsx", sheet = "Plan2", rowNames = FALSE )
+fc$custo_sem_terra <- fc$custo
+
+# Simulação, variando taxa de juros
+valor_terra <- 10000
+tj <- seq( from = 0.05, to = 0.13, by = 0.02 )
+
+ii <- fc$idade != 0
+
+for( i in 1:length( tj ) ) {
+
+  fc$custo[ ii ] <- fc$custo_sem_terra[ ii ] + valor_terra * tj[ i ]
+  
+  # avaliação econômica
+  ae <- avecon( fc[, 1:5 ], tj = tj[ i ], valor_terra, TRUE )
+
+  # idade ótima de corte
+  if( i == 1 ){
+    with( ae, plot( projeto, vplinf, ylim = c( 0, max( ae$vplinf ) ), type = "l", col = i ) ) 
+  } else {
+    with( ae, lines( projeto, vplinf, type = "l", col = i ) )
+  }
+  
+}
+
+legend( "topright", legend = paste0( tj*100, "%"), text.col = 1:length(tj), bty ="n", horiz = T )
+
+# fazer variações para frete, preço da madeira, taxa de juros, custo da terra.
+
+
+```
+
+# Desbaste
+
+Desbaste é um processo natural que pode ser otimizado mecanicamente.
+
+Corte no máximo ICA não tem preocupação com a produção intermediária.
+
+Corte no máximo IMA há preocupação com a produção intermediária.
+
+# Tipos de desbaste
+
+- sistemático
+
+- seletivo
+
+- misto
+
+# Riscos do desbaste
+
+- incêndio
+
+- pragas
+
+- vento
+
+# Principais objetivos
+
+- produção intermediária
+
+- melhorar padrão da floresta remanescente
+
+- diminuir competição
+
+- diminuir estresse
+
+- aumentar proteção natural contra praga
+
+
+
+
+
