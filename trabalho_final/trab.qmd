@@ -1,0 +1,89 @@
+---
+title: "Classificação de Sítio e Análise Econômica das Fazendas"
+author: Gabriel de Freitas Pereira
+lang: pt
+execute:
+  echo: false
+format:
+  pdf:
+    toc: true
+    number-sections: true
+header-includes: 
+   \usepackage{graphicx}
+   \usepackage{fancyhdr}
+   \pagestyle{fancy}
+   \setlength\headheight{28pt}
+   \fancyhead[L]{\includegraphics[width=5cm]{chestreelogo.png}}
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+![Logo image](chestreelogo.png)
+\center _Be the change you want to see in the world_
+
+
+
+\newpage
+
+## Apresentação
+
+\  bla bal
+
+## Introdução
+
+\  Para o setor florestal, o planejamento da produção é fundamental e, nesse contexto,
+a modelagem do crescimento e da produção florestal é uma ferramenta que auxilia o
+manejador na tomada de decisões. A modelagem busca prognosticar a produção em
+volume, em área basal, ou em peso em função de variáveis que são possíveis de serem
+quantificadas no povoamento florestal.
+
+O crescimento e a produção de um povoamento florestal dependem da idade, da
+capacidade produtiva ou sítio, do grau de utilização do potencial produtivo e dos
+tratamentos silviculturais. Assim, a qualidade ou a capacidade produtiva do sítio pode ser
+definida como o potencial de uma determinada espécie para a produção de madeira
+(CAMPOS; LEITE, 2009).
+
+Para prever o crescimento, o que é de suma importância em qualquer processo de
+planejamento racional, é utilizado curvas de projeção do desenvolvimento em função dos
+diâmetros, alturas e volumes (GUIMARÃES, 1994). Dentre os fatores necessários em
+questão, destacam-se a idade ótima de corte e a maximização do lucro.
+
+A classificação por índices de sítio constitui um método prático e consistente da
+avaliação da qualidade do local, uma vez que todos os fatores ambientais são refletidos de
+modo interativo no crescimento em altura, a qual também está relacionada com o volume.
+O fato da classificação do sítio ser feita por meio de uma expressão numérica, em vez de
+uma descrição qualitativa, constitui-se em uma vantagem desse método (CAMPOS;
+LEITE, 2009).
+
+É importante determinar a idade de corte com exatidão pois, ao antecipar ou adiar
+o corte do povoamento, a empresa estará impossibilitando o alcance do máximo volume e
+do máximo lucro por unidade de área.
+
+## Objetivo
+
+\  
+
+\newpage
+
+## Metodologia
+
+\  
+
+## Classificação de sítios
+
+\  
+
+## Prognose e rotação ótima de corte
+
+\  balba-pfsajfdoahsndpfhnasopvdnhhpausdnfpoasnd
+
+```{r}
+
+```
+
+
+```{r}
+
+```
+
