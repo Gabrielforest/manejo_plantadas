@@ -8,63 +8,44 @@ format:
   pdf:
     toc: true
     number-sections: true
+bibliography: references.bib
 header-includes: 
    \usepackage{graphicx}
    \usepackage{fancyhdr}
    \pagestyle{fancy}
    \setlength\headheight{28pt}
    \fancyhead[L]{\includegraphics[width=5cm]{chestreelogo.png}}
+   \fancyfoot[LE,RO]{chesTree}
 editor_options: 
   markdown: 
     wrap: 72
 ---
 
-![Logo image](chestreelogo.png)
-\center _Be the change you want to see in the world_
+![](chestreelogo.png)
 
-
+_Be the change you want to see in the world_
 
 \newpage
 
 ## Apresentação
 
-\  bla bal
+\  A chesTree é uma empresa de consultoria e serviços florestais, especializada nos processos que envolvem medições e realizações de inventários. A chesTree conta com profissionais qualificados e renomados do mercado, atuando na área florestal desde 1990. A sede da empresa está localizada em São Paulo, mas conta com filiais espalhadas por todo país.
 
 ## Introdução
 
-\  Para o setor florestal, o planejamento da produção é fundamental e, nesse contexto,
-a modelagem do crescimento e da produção florestal é uma ferramenta que auxilia o
-manejador na tomada de decisões. A modelagem busca prognosticar a produção em
-volume, em área basal, ou em peso em função de variáveis que são possíveis de serem
-quantificadas no povoamento florestal.
+\ Um inventário florestal é uma prática que busca a quantificação, e por conseguinte, a qualificação das florestas em diferentes aspectos, como a produção de madeira e outros possíveis produtos, através do uso de técnicas estatísticas de amostragem. Considerando que, o inventário visa obter o máximo de informações de uma floresta com a máxima precisão e o mínimo custo. Esses três fatores desempenham papel importante no planejamento de um inventário florestal [@junior2020measure].
 
-O crescimento e a produção de um povoamento florestal dependem da idade, da
-capacidade produtiva ou sítio, do grau de utilização do potencial produtivo e dos
-tratamentos silviculturais. Assim, a qualidade ou a capacidade produtiva do sítio pode ser
-definida como o potencial de uma determinada espécie para a produção de madeira
-(CAMPOS; LEITE, 2009).
+\ Sendo assim, o conhecimento dos processos de crescimento e produção de um povoamento florestal são indubitavelmente necessários ao gerenciamento racional das florestas plantadas [@cosenza2015classificaccao]. Logo, as técnicas estatísticas que envolvem modelagens tornam-se ferramentas importantes para se obter informações relevantes que auxiliem na tomada de decisões durante o planejamento florestal, a partir de características encontradas na área e sua conseguinte prognose de produção gerada. Afinal, o crescimento e a produção de um povoamento florestal dependem de diversos fatores que podem ser quantificados e planejados, como a idade, o sítio (potencial produtivo), os tratos silviculturais, entre outros. 
 
-Para prever o crescimento, o que é de suma importância em qualquer processo de
-planejamento racional, é utilizado curvas de projeção do desenvolvimento em função dos
-diâmetros, alturas e volumes (GUIMARÃES, 1994). Dentre os fatores necessários em
-questão, destacam-se a idade ótima de corte e a maximização do lucro.
+\ Dessa forma, com a intenção de prever o crescimento, são estimadas variáveis dendrométricas e classes de produtividade ou sítio. Portanto, a determinação de sítio é de suma importância durante todo o sistema de prognose e definição das classes de produtividade [@demetodos]. Isso se deve ao fato de que há uma amplitude de variação dos fatores biológicos, os quais refletem no crescimento das florestas.  
 
-A classificação por índices de sítio constitui um método prático e consistente da
-avaliação da qualidade do local, uma vez que todos os fatores ambientais são refletidos de
-modo interativo no crescimento em altura, a qual também está relacionada com o volume.
-O fato da classificação do sítio ser feita por meio de uma expressão numérica, em vez de
-uma descrição qualitativa, constitui-se em uma vantagem desse método (CAMPOS;
-LEITE, 2009).
-
-É importante determinar a idade de corte com exatidão pois, ao antecipar ou adiar
-o corte do povoamento, a empresa estará impossibilitando o alcance do máximo volume e
-do máximo lucro por unidade de área.
+\ Desse modo, é possível concluir que através das estimativas citadas anteriormente se pode alcançar a máxima eficiência volumétrica, ou seja, a idade em que o povoamento atinge ao maximizar o incremento médio anual (IMA), pois o mesmo apresenta um único ponto de máximo quando associado a curvas de crescimento que apresentam uma fase inicial com ganhos mais do que proporcionais, seguida de uma fase com ganhos
+decrescentes [@rodriguez2010tecnicas]. Logo, saber quando ocorrerá o máximo lucro por unidade de área é um fator imprescindível para uma empresa florestal, o qual é perceptível através desse parâmetro. 
 
 ## Objetivo
 
-\  
-
-\newpage
+\  O presente relatório tem como objetivo utilizar dados de um inventario florestal
+contínuo de plantios clonais de _Eucalyptus_ sp. no estado de São Paulo para: classificar os sítios das três fazendas; recomendar a idade ótima de corte; definir qual a fazenda mais lucrativa dentro das condições existentes para possível implantação de floresta.
 
 ## Metodologia
 
@@ -76,7 +57,9 @@ do máximo lucro por unidade de área.
 
 ## Prognose e rotação ótima de corte
 
-\  balba-pfsajfdoahsndpfhnasopvdnhhpausdnfpoasnd
+\  
+
+## Referências 
 
 ```{r}
 
