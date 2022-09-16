@@ -1,0 +1,206 @@
+---
+title: "aula 11"
+author: Gabriel de Freitas Pereira
+format:
+  pdf:
+    lang: pt
+    toc: true
+    number-sections: true
+---
+
+# Definição PO (Pesquisa Operacional)
+
+PO é o campo de estudos em que são aplicados métodos analíticos para ajudar os executivos a tomar as melhores decisões.
+
+Importante: a solução ótima matemática não retira a necessidade da avaliação da viabilidade técnica de eventos modeláveis ou não modeláveis.
+
+# Metodologias
+
+## Programação linear
+
+Metodologia mais popular, sendo as principais características:
+
+a)  combinações de variáveis que podem ser maximizadas ou minimizadas. Para estas combinações dá-se o nome função objetivo. Ex.: (a + b + c).
+
+b)  Um certo nº de restrições, expressas na forma de equações ou inequações matemáticas. Ex.: (a + b + c) e suas restrições para alcançar menor custo (ou qualquer que seja o objetivo).
+
+### Ideia geral
+
+Maximizar ou minimizar a função objetivo ao mesmo tempo obedecendo a todas as restrições. O nome linear vem do fato de que tanto a expressão que forma a função objetivo e quanto as restrições são expressas linearmente, ou seja, todas as **variáves** aparecem com expoente igual a unidade (elevado a 1).
+
+### Exercício 1
+
++-------------+--------------------------+--------------------------+-------------+------------------------+
+| Produto     | Máquina 1 (horas gastas) | Máquina 2 (horas gastas) | Demanda     | Lucro Unitário (reais) |
++=============+==========================+==========================+=============+========================+
+| x           | 4                        | 4                        | Ilimitada   | 80                     |
++-------------+--------------------------+--------------------------+-------------+------------------------+
+| y           | 6                        | 2                        | 3           | 60                     |
++-------------+--------------------------+--------------------------+-------------+------------------------+
+| Disponíveis | 24                       | 16                       |             |                        |
++-------------+--------------------------+--------------------------+-------------+------------------------+
+
+Função Objetivo (FO): maximizar $80x + 60y$
+
+Sujeito A:
+
+$4x + 6y \le 24$
+
+$4x + 2y \le 16$
+
+$0x + 1y \le 3$
+
+Resolvendo primeira equação graficamente: Se y = 0, x = 6; se x = 0, y = 4. Só traçar a reta. Resolvendo segunda equação graficamente: Se y = 0, x = 4; se x = 0, y = 8. Só traçar a reta. Resolvendo terceira equação graficamente: Se y = 0, x = 0; se x = 0, y = 3. Só traçar a reta.
+
+Agora basta ver onde as retas se cruzaram, como na figura abaixo, e eliminar regiões posteriores à reta:
+
+![](sistema.jpeg)
+
++--------------+--------------+--------------+--------------+
+|              | x            | y            | FO           |
++==============+==============+==============+==============+
+| P            | 0            | 0            | 0            |
++--------------+--------------+--------------+--------------+
+| Q            | 4            | 0            | 320          |
++--------------+--------------+--------------+--------------+
+| **R**        | **3**        | **2**        | **360**      |
++--------------+--------------+--------------+--------------+
+| S            | 1.5          | 3            | 300          |
++--------------+--------------+--------------+--------------+
+| T            | 0            | 3            | 180          |
++--------------+--------------+--------------+--------------+
+
+Sendo assim a solução seria comprar 3 de 80 e 2 de 60.
+
+### Exercício 2
+
+| Nutriente    | Adubo 1 (reais) | Adubo 2 (reais) | Composição mínima |
+|--------------|-----------------|-----------------|-------------------|
+| N            | 10              | 20              | 180               |
+| P            | 40              | 40              | 600               |
+| K            | 45              | 25              | 450               |
+| Custo por kg | 6               | 8               |                   |
+
+Função Objetivo (FO): minimizar $6x + 8y$
+
+Sujeito A:
+
+$10x + 20y \ge 180$
+
+$40x + 40y \ge 600$
+
+$45x + 25y \ge 450$
+
+Resolvendo primeira equação graficamente: Se y = 0, x = 18; se x = 0, y = 9. Só traçar a reta. Resolvendo segunda equação graficamente: Se y = 0, x = 15; se x = 0, y = 15. Só traçar a reta. Resolvendo terceira equação graficamente: Se y = 0, x = 10; se x = 0, y = 18. Só traçar a reta.
+
+Agora basta ver onde as retas se cruzaram, como na figura abaixo, e eliminar regiões anteriores à reta. Para isso é necessário escolher um valor qualquer para igualar a função objetiva, como $6x + 8y = 48$ e encontrar os valores de x e y, como fizemos anteriormente, com isso temos:
+
+![](sistema_ex_2.jpeg)
+
+A solução portanto é gastar 12 kg do adubo 1 e 3 kg do adubo 2, que chegamos com as retas paralelas.
+
+### Alguns casos especiais da Programação linear (PL)
+
+1)  Restrições incompatíveis
+
+maximizar: $1x + 1y$
+
+Sujeito A:
+
+$4x + 3y \le 12$
+
+$y \ge 5$
+
+$x \ge 4$
+
+2)  Solução sem fronteira
+
+maximizar: $4x + 1y$
+
+Sujeito A:
+
+$x \ge 2$
+
+$y \le 3$
+
+Pois, x tende ao infinito, necessitaria alguma restrição para x.
+
+3)  Redundância
+
+Maximizar: $3x + 2y$
+
+Sujeito A:
+
+$10x + 5y \le 50$
+
+$1x + 1y \le 7$
+
+$0x + 1y \le 15$
+
+4)  Soluções alternativas
+
+Quando tem mais de uma resposta, e possivelmente as restrições devem ser incrementadas.
+
+Maximizar: $4x + 12y$
+
+Sujeito A:
+
+$1x + 3y \le 6$
+
+$5x + 3y \le 15$
+
+Repetir o passo a passo que fizemos nos outros exercícios. Com isso, chegamos em qualquer valor, das duas retas, pois a reta paralela passa em cima dos 2. Resolução a seguir:
+
+![](solucoes_alternativas.jpeg) 
+
+### Exercício 3
+
+Problemas de transporte e designação
+
+10000 F1 D1 8000
+
+15000 F2 D2 4000
+
+5000 F3 D3 7000 D4 11000
+
++----------+----------+----------+----------+----------+-------------+
+| Col1     | D1       | D2       | D3       | D4       | Produção    |
++==========+==========+==========+==========+==========+=============+
+| F1       | 13       | 8        | 9        | 12       | 10000       |
++----------+----------+----------+----------+----------+-------------+
+| F2       | 12       | 9        | 10       | 14       | 15000       |
++----------+----------+----------+----------+----------+-------------+
+| F3       | 8        | 8        | 9        | 6        | 5000        |
++----------+----------+----------+----------+----------+-------------+
+| Demanda  | 8000     | 4000     | 7000     | 11000    |             |
++----------+----------+----------+----------+----------+-------------+
+
+Minimizar: $13x11 + 8x12 + 9x13 + 12x14 + 12x21 + 9x22 + 10x23 + 14x24 + 8x31 + 8x32 + 9x33 + 6x34$
+
+Sujeito A:
+
+$X11 + X12 + X13 + X14 \le 10000$
+
+$X21 + X22 + X23 + X24 \le 15000$
+
+$X31 + X32 + X33 + X34 \le 5000$
+
+$X11 + X21 + X31 = 8000$
+
+$X12 + X22 + X32 = 4000$
+
+$X13 + X23 + X33 = 7000$
+
+$X14 + X24 + X34 = 11000$
+
+Resolver esse problema no R ou Lingo ou Lindo.
+
+## Programação linear inteira
+
+## Programação dinâmica
+
+## Heurística
+
+## Redes neurais
+
+## Algoritmos genéticos

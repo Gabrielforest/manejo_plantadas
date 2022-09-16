@@ -1,0 +1,89 @@
+---
+title: "aula 10"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+---
+
+# Produtos gerados
+
+- pulpwood    
+
+- utility: faz desbaste (1 ou 2 ou 3 desbastes, no caso de eucalipto é 1 desbaste geralmente).
+
+- clearwood: faz desbaste e desrama artificial (poda).
+
+
+Idade ótima de poda pode ser prevista através do afilamento.
+
+Não é aconselhável fazer poda, a não ser que se tenha contratos bem definidos em relação
+a madeira livre de nós, para que os gastos sejam em prol de maior lucro.
+
+# Viabilidade econômica
+
+Manejo florestal = um ordenamento florestal (ordenar operações) + mercado.
+
+E dependendo da situação você pode criar um mercado (gerar produtos a partir da madeira), 
+ou seja, gerar a necessidade do uso da madeira. 
+
+# Principais fatores influentes
+
+- espécie/clone, afeta no desbaste, desrama e por conseguinte no seu uso.  
+
+- qualidade do sítio + topografia, ou seja se o sítio for bom cresce se não, não 
+adianta adubar e fazer muita coisa.
+
+- distribuição espacial e uso de árvores por unidade de área, 200 a 150 por ha é bom quando
+há desbaste no entanto se houver uma má distribuição espacial isso não significa nada.
+Quanto menor o número de árvores, maior o m³/ha, no entanto, chega um ponto em que essa diferença não é significativa. Usado o Neuder para analisar e aumentar o espaçamento pra determinada espécie aos poucos.
+
+# Efeitos do desbaste na produção
+
+O somatório dos cortes intermediários é igual ao volume gerado sem cortar a floresta,
+essa pressuposição é de Clutter. 
+
+# Intensidades dos desbastes 
+
+- Número de árvores: quantas árvores removerei no desbaste.
+
+- Área basal*: remover área basal (em porcentagem), daí o número de árvores varia para cada área.
+Esse é o mais usado.
+
+- Volume
+
+# Determinação da idade técnica de desbaste
+
+- Máximo incremendo corrente do diâmetro (quanto o diâmetro vai aumentando).
+
+- Método dos ingressos percentuais: cálculo de qual é a porcentagem de migração.
+
+$$IP = (\alpha/\beta) ln ( 1 + e^{\beta(I-ITD)}) + \Sigma$$
+
+IP = ingresso percentual de árvores
+
+I = idade do povoamento
+
+$\alpha$ = crescimento máximo absoluto do IP
+
+$\beta$ = crescimento máximo relativo do IP
+
+ITD = Idade técnica do desbaste
+
+# Pesquisa operacional
+
+Baixar software lindo ou lingo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
