@@ -195,6 +195,73 @@ $X14 + X24 + X34 = 11000$
 
 Resolver esse problema no R ou Lingo ou Lindo.
 
+```{r}
+# Exercício 2
+library( lpSolve )
+
+funcao_objetiva <- c( 6, 8 )
+
+coeficientes <- matrix( c( 10, 20,
+                           40, 40,
+                           45, 25 ), 
+                        nrow = 3, 
+                        ncol = 2 )
+
+sinais <- c( ">=", 
+             ">=", 
+             ">=" )
+
+restricoes <- c( 180,
+                 600,
+                 450 )
+
+# Solução
+lp( "min", funcao_objetiva, coeficientes, sinais, restricoes )$solution
+
+# Sensibilidade
+lp( "min", funcao_objetiva, coeficientes, sinais, restricoes, compute.sens = TRUE )$sens.coef.from
+
+lp( "min", funcao_objetiva, coeficientes, sinais, restricoes, compute.sens = TRUE )$sens.coef.to
+
+# Exercício 3
+funcao_objetiva <- c( 13, 8, 9, 12, 
+                      12, 9, 10, 14, 
+                      8, 8, 9, 6 )
+
+coeficientes <- matrix( c( 10, 20,
+                           40, 40,
+                           45, 25 ), 
+                        nrow = 3, 
+                        ncol = 2 )
+
+sinais <- c( "<=", 
+             "<=", 
+             "<=",
+             "=",
+             "=",
+             "=",
+             "=" )
+
+restricoes <- c( 1000,
+                 15000,
+                 5000,
+                 8000,
+                 4000,
+                 7000,
+                 11000 )
+
+# Solução
+lp( "min", funcao_objetiva, coeficientes, sinais, restricoes )$solution
+
+# Sensibilidade
+lp( "min", funcao_objetiva, coeficientes, sinais, restricoes, compute.sens = TRUE )$sens.coef.from
+
+lp( "min", funcao_objetiva, coeficientes, sinais, restricoes, compute.sens = TRUE )$sens.coef.to
+
+
+```
+
+
 ## Programação linear inteira
 
 ## Programação dinâmica
