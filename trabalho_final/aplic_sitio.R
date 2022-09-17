@@ -10,10 +10,11 @@ head( ifc )
 ifc <- ifc[ ,c( "parcela","idade", "hdom" ) ]
 names( ifc ) <- c( "idamostra","idade1","hdom1" )
 
-# Bailey e Clutter Polimórfico
+# Bailey e Clutter Polimórfico - melhor
 bcpoli <- "b0*((hdom1/b0)^((idade1/idade2)^b2))"
 parms <- list( b0 = cfbcpoli[ 1 ], b2 = cfbcpoli[ 2 ] )
 
+# 4 classes
 clsbcpoli <- class_sitio_dif_alg( amostras = ifc,
                                   expr = bcpoli,
                                   parms = parms,
@@ -54,7 +55,6 @@ View( clscrpoli$amostras )
 crana <- "((hdom1*(1-exp(b1*(idade2))))/(1-exp(b1*(idade1))))^b2"
 parms <- list( b1 = cfcrana[ 1 ], b2 = cfcrana[ 2 ] )
 
-x11()
 clscrana <- class_sitio_dif_alg( amostras = ifc,
                                  expr = crana,
                                  parms = parms,
