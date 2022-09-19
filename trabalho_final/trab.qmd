@@ -78,17 +78,44 @@ qual é perceptível através desse parâmetro.
 
   O presente relatório tem como objetivo utilizar dados de um inventario
 florestal contínuo de plantios clonais de *Eucalyptus* sp. no estado de
-São Paulo para: classificar os sítios das três fazendas; recomendar a
-idade ótima de corte; definir qual a fazenda mais lucrativa dentro das
-condições existentes para possível implantação de floresta.
+São Paulo para: 
+
+- classificar os sítios das três fazendas; 
+
+- recomendar a idade ótima de corte; 
+
+- definir qual a fazenda mais lucrativa dentro das
+condições existentes para possível implantação da floresta.
 
 ## Metodologia
 
- 
+### Coleta de dados e classificação de sítios
 
-### Classificação de sítios
+\  Inicialmente, os primeiros aspectos da área foram fornecidos pelo
+proprietário da área e foram analisadas presencialmente na fazenda, e
+essas informações eram sobre o espaçamento, tipo de solo, relevo,
+presença de patógenos, umidade do solo, entre outras informações gerais.
+Depois desse processo, os dados de diâmetro à altura do peito (DAP)
+foram coletados a 1,3 m do solo, através do uso de uma fita métrica no
+sentido horizontal em relação ao solo. Quando as árvores estavam em
+terreno inclinado, a medição foi realizada no ponto mais elevado e no
+caso das árvores inclinadas a fita métrica foi colocada no sentido
+perpendicular ao eixo do tronco da árvore. A altura total foi medida
+através de um hipsômetro Suunto. As informações adquiridas foram
+armazenadas em tablets, assim como o registro de informações como a
+localização e identificação da área e locais de acesso.
 
- 
+\  Com isso, o procedimento de amostragem que foi adotado na realização do
+inventário após a análise dos dados foi a amostragem casual simples com
+parcelas circulares. Esse tipo de amostragem é um método utilizado em
+populações homogêneas e foi escolhido, justamente, por conta dessa
+característica do povoamento. Além disso, o procedimento de inventário florestal
+citado anteriormente foi repetido ao longo dos anos, de forma contínua, com o objetivo
+de processar os dados nos softwares R 4.2.1 e Microsoft Excel.
+
+\ Sendo assim, para a classificação de sítios, foram avaliados os modelos hipsométricos apresentados a seguir, tanto na forma anamórfica quanto polimórfica. 
+
+\  
 
 Chapman-Richards
 
@@ -97,6 +124,7 @@ Chapman-Richards
 
 -   polimórfico:
     $Hd2 = \beta_0 * \left( \frac{ Hd_1 } {\beta_0} \right) ^{\frac{ log( 1 - e ^ {\beta*1Id_2 } ) } {log( 1 - e ^ {*\beta 1Id_1} ) } }$
+
 
 Schumacher
 
@@ -115,19 +143,98 @@ Bayley-Clutter
     $Hd_2 = \beta_0 \left( \frac{ Hd_1 } { \beta_0 } \right )^{ \left( \frac{ Id_1 } { Id_2 } \right ) ^{ \beta_2 } }$
 
 
-### Prognose e idade técnica de corte
+\  A partir da avaliação feita com base na análise gráfica e atributos estatísticos gerados, foi escolhido o melhor modelo para prosseguir com a classificação de sítio. Dessa forma, a idade referência utilizada para classificar as parcelas medidas foi a de 72 meses, com sítios divididos
+em quatro classes. 
+
+\  Além disso, visando garantir a melhor escolha possível do modelo foram comparadas as estabilidades entre parcelas dos dois melhores modelos, escolhendo o modelo mais estável. E com isso, finalmente foi realizada 
+a reclassificação analisando como a altura varia de acordo com a idade
+da floresta.
+
+### Prognose e rotação técnica de corte
+
+\  Para estimar a produção do volume, foi realizada a prognose e rotação nas diferentes idades (24, 36, 48, 60, 72, 84, 96, 108, 120 meses) dos talhões analisados. Sendo que, foi utilizado o modelo volumétrico de Clutter (representado a seguir), do qual foram analisados seus respectivos atributos estatísticos e gráficos.  
+
+$lnV = \beta_0 + \beta_1 * \frac{1} {S} + \beta_2 * \frac{1} {Id2} + \beta_3 * \left(\frac{Id_1}{Id_2}\right) * ln(ab_1) + \beta_4 * \left( 1 - \frac{Id_1}{Id_2}\right) + \beta_5 * \left( 1 - \frac{Id_1}{Id_2}\right) * S$
+
+A equação acima considera que: 
+
+- $V$ = volume de madeira (m³) na idade 2;
+
+- $S$ = valor central da classe de sítio da parcela (m);
+
+- $Id$ = idade (meses);
+
+- $ab$ = área basal (m³/ha).
+
+\  Então, a partir das estimativas de área basal foram calculados o Incremento Corrente Anual (ICA) e o Incremento Médio Anual (IMA) para os talhões analisados, de acordo com as fórmulas apresentadas abaixo.
+
+$IMA = \frac{V_{Id}} {Id}$
+
+$ICA = V_{Id_2} - V_{Id_1}$
+
+onde:
+
+$V_{Id}$ = volume na idade n; 
+
+$Id$ = idade n.
 
 ### Análise econômica
 
- 
+\  Com o intuito de determinar a idade ótima de corte foi realizada uma análise econômica, considerando que os anos e custos das operações foram anexados neste documento, para facilitar a visualização das premissas usadas. Logo, a partir desses dados, foi gerada uma planilha de fluxo de caixa de cada talhão analisado, com valores de Receitas e Custos para cada ano de plantio. Desse modo, os seguintes valores foram calculados: Valor Presente das Receitas (VPR), Valor Presente dos Custos (VPC), Valor Presente 
+Líquido (VPL), Valor Presente Líquido Infinito (VPL inf), Custo Médio da Produção (CMPr), Relação Benefício Custo (B/C), Valor Esperado da Terra (VET) e a Taxa Interna de Retorno (TIR).
+
+\  A análise econômica foi realizada de forma principal através do VPL, considerando um horizonte infinito (VPL infinito), pois dessa maneira é possível comparar projetos com durações diferentes. Dessa forma os projetos foram avaliados. Algumas das fórmulas estão apresentadas abaixo:
+
+$$VPL = VP - VPC$$ 
+
+Sendo:
+
+$VPC$ = valor presente do custo 
+
+$VP$ = valor presente
+
+$$
+VPLinf = \frac{VP(1+i)^t} {(1+i)^t-1}  = \frac{VP} {(1-(1+i)^t)}
+$$ 
+
+Sendo:
+
+$t$ em anos e taxa $i$ anual 
+
+ou 
+
+$t$ em meses e taxa $i$ mensal
+
+
+$$BC = \frac{VP}{VPC}$$
+Em que:
+
+$VPC$ = valor presente do custo 
+
+
+$$\sum_{j=0}^{n} C_j(1 + TIR)^{−j}$$
+
+Em que:
+
+$C_j$ = valor atual dos custos;
+
+$j$ = período em que os custos ou receitas ocorrem;
+
+$n$ = duração do projeto.
+
+\  
+
+\  Esses valores gerados serão devidamente comentados posteriormente neste relatório, de acordo com as interpretações geradas e suas motivações.
 
 ### Análise de sensibilidade
 
- 
+\  Portanto, com a análise econômica florestal realizada, foram especulados cenários existentes e suas respectivas alterações em valores como o custo da terra, custos de venda da madeira e custos atrelados
+ao transporte da madeira.
+
 
 ## Resultados e discussão
 
-```{r}
+```{r, echo=FALSE, include = FALSE}
 # gráfico de sítios
 # Avaliação de estabilidade dos modelos Bailey & Clutter Polimórfico e Chapman & Richards Polimórfico.
 
@@ -139,14 +246,14 @@ library( cowplot )
 library( gridExtra )
 library( qqplotr )
 
-dados_npar <- read.csv2( "trabalho_final/ifc.csv" )
+dados_npar <- read.csv2( "ifc.csv" )
 names( dados_npar )
 dados_npar <- dados_npar[ c( "parcela", "idade", "hdom", "ab", "vtsc", "vtcc" ) ]
 
 dados <- cmrinvflor::parear_seqmed( dados_npar )
 head( dados )
 
-img <- image_read( "trabalho_final/chestreelogo.PNG" )
+img <- image_read( "chestreelogo.PNG" )
 
 theme_chesTree <- theme_bw( ) +
   theme( panel.grid.major = element_line( color = "gray70", linetype = "dashed" ),
@@ -499,8 +606,6 @@ ggdraw( ) +
   draw_plot( arranged_res, x = 0, y = 0.15, width = 1, height = 0.85 ) +
   draw_image( img, x = 0.58, y = 0.02, width = 0.35, height = 0.5 )  
 
-margin <- theme( plot.margin = unit( c( 2, 2, 2, 2 ), "cm" ) )
-grid.arrange( grobs = lapply( pl, "+", margin ) )
 ```
 
 ### Estatísticas dos modelos
