@@ -78,20 +78,20 @@ qual é perceptível através desse parâmetro.
 
   O presente relatório tem como objetivo utilizar dados de um inventario
 florestal contínuo de plantios clonais de *Eucalyptus* sp. no estado de
-São Paulo para: 
+São Paulo para:
 
-- classificar os sítios das três fazendas; 
+-   classificar os sítios das três fazendas;
 
-- recomendar a idade ótima de corte; 
+-   recomendar a idade ótima de corte;
 
-- definir qual a fazenda mais lucrativa dentro das
-condições existentes para possível implantação da floresta.
+-   definir qual a fazenda mais lucrativa dentro das condições
+    existentes para possível implantação da floresta.
 
 ## Metodologia
 
 ### Coleta de dados e classificação de sítios
 
-\  Inicialmente, os primeiros aspectos da área foram fornecidos pelo
+  Inicialmente, os primeiros aspectos da área foram fornecidos pelo
 proprietário da área e foram analisadas presencialmente na fazenda, e
 essas informações eram sobre o espaçamento, tipo de solo, relevo,
 presença de patógenos, umidade do solo, entre outras informações gerais.
@@ -105,17 +105,20 @@ através de um hipsômetro Suunto. As informações adquiridas foram
 armazenadas em tablets, assim como o registro de informações como a
 localização e identificação da área e locais de acesso.
 
-\  Com isso, o procedimento de amostragem que foi adotado na realização do
-inventário após a análise dos dados foi a amostragem casual simples com
-parcelas circulares. Esse tipo de amostragem é um método utilizado em
-populações homogêneas e foi escolhido, justamente, por conta dessa
-característica do povoamento. Além disso, o procedimento de inventário florestal
-citado anteriormente foi repetido ao longo dos anos, de forma contínua, com o objetivo
-de processar os dados nos softwares R 4.2.1 e Microsoft Excel.
+  Com isso, o procedimento de amostragem que foi adotado na realização
+do inventário após a análise dos dados foi a amostragem casual simples
+com parcelas circulares. Esse tipo de amostragem é um método utilizado
+em populações homogêneas e foi escolhido, justamente, por conta dessa
+característica do povoamento. Além disso, o procedimento de inventário
+florestal citado anteriormente foi repetido ao longo dos anos, de forma
+contínua, com o objetivo de processar os dados nos softwares R 4.2.1 e
+Microsoft Excel.
 
-\ Sendo assim, para a classificação de sítios, foram avaliados os modelos hipsométricos apresentados a seguir, tanto na forma anamórfica quanto polimórfica. 
+ Sendo assim, para a classificação de sítios, foram avaliados os modelos
+hipsométricos apresentados a seguir, tanto na forma anamórfica quanto
+polimórfica.
 
-\  
+ 
 
 Chapman-Richards
 
@@ -125,7 +128,6 @@ Chapman-Richards
 -   polimórfico:
     $Hd2 = \beta_0 * \left( \frac{ Hd_1 } {\beta_0} \right) ^{\frac{ log( 1 - e ^ {\beta*1Id_2 } ) } {log( 1 - e ^ {*\beta 1Id_1} ) } }$
 
-
 Schumacher
 
 -   anamórfico:
@@ -134,7 +136,7 @@ Schumacher
 -   polimórfico:
     $Hd_2 = \beta_0 \left( \frac{ Hd_1 } { \beta_0 }\right)^{ \frac{ Id_1 } { Id_2 } }$
 
-Bayley-Clutter
+Bailey-Clutter
 
 -   anamórfico:
     $Hd_ 2 = \frac{ Hd_1 } { e^{ \beta_1^{ ( Id_ 2 ^{\beta_2} - Id_1 ^{ \beta_2}) } } }$
@@ -142,31 +144,41 @@ Bayley-Clutter
 -   polimórfico:
     $Hd_2 = \beta_0 \left( \frac{ Hd_1 } { \beta_0 } \right )^{ \left( \frac{ Id_1 } { Id_2 } \right ) ^{ \beta_2 } }$
 
+  A partir da avaliação feita com base na análise gráfica e atributos
+estatísticos gerados, foi escolhido o melhor modelo para prosseguir com
+a classificação de sítio. Dessa forma, a idade referência utilizada para
+classificar as parcelas medidas foi a de 72 meses, com sítios divididos
+em quatro classes.
 
-\  A partir da avaliação feita com base na análise gráfica e atributos estatísticos gerados, foi escolhido o melhor modelo para prosseguir com a classificação de sítio. Dessa forma, a idade referência utilizada para classificar as parcelas medidas foi a de 72 meses, com sítios divididos
-em quatro classes. 
-
-\  Além disso, visando garantir a melhor escolha possível do modelo foram comparadas as estabilidades entre parcelas dos dois melhores modelos, escolhendo o modelo mais estável. E com isso, finalmente foi realizada 
-a reclassificação analisando como a altura varia de acordo com a idade
-da floresta.
+  Além disso, visando garantir a melhor escolha possível do modelo foram
+comparadas as estabilidades entre parcelas dos dois melhores modelos,
+escolhendo o modelo mais estável. E com isso, finalmente foi realizada a
+reclassificação analisando como a altura varia de acordo com a idade da
+floresta.
 
 ### Prognose e rotação técnica de corte
 
-\  Para estimar a produção do volume, foi realizada a prognose e rotação nas diferentes idades (24, 36, 48, 60, 72, 84, 96, 108, 120 meses) dos talhões analisados. Sendo que, foi utilizado o modelo volumétrico de Clutter (representado a seguir), do qual foram analisados seus respectivos atributos estatísticos e gráficos.  
+  Para estimar a produção do volume, foi realizada a prognose e rotação
+nas diferentes idades (24, 36, 48, 60, 72, 84, 96, 108, 120 meses) dos
+talhões analisados. Sendo que, foi utilizado o modelo volumétrico de
+Clutter (representado a seguir), do qual foram analisados seus
+respectivos atributos estatísticos e gráficos.
 
 $lnV = \beta_0 + \beta_1 * \frac{1} {S} + \beta_2 * \frac{1} {Id2} + \beta_3 * \left(\frac{Id_1}{Id_2}\right) * ln(ab_1) + \beta_4 * \left( 1 - \frac{Id_1}{Id_2}\right) + \beta_5 * \left( 1 - \frac{Id_1}{Id_2}\right) * S$
 
-A equação acima considera que: 
+A equação acima considera que:
 
-- $V$ = volume de madeira (m³) na idade 2;
+-   $V$ = volume de madeira (m³) na idade 2;
 
-- $S$ = valor central da classe de sítio da parcela (m);
+-   $S$ = valor central da classe de sítio da parcela (m);
 
-- $Id$ = idade (meses);
+-   $Id$ = idade (meses);
 
-- $ab$ = área basal (m³/ha).
+-   $ab$ = área basal (m³/ha).
 
-\  Então, a partir das estimativas de área basal foram calculados o Incremento Corrente Anual (ICA) e o Incremento Médio Anual (IMA) para os talhões analisados, de acordo com as fórmulas apresentadas abaixo.
+  Então, a partir das estimativas de área basal foram calculados o
+Incremento Corrente Anual (ICA) e o Incremento Médio Anual (IMA) para os
+talhões analisados, de acordo com as fórmulas apresentadas abaixo.
 
 $IMA = \frac{V_{Id}} {Id}$
 
@@ -174,43 +186,52 @@ $ICA = V_{Id_2} - V_{Id_1}$
 
 onde:
 
-$V_{Id}$ = volume na idade n; 
+$V_{Id}$ = volume na idade n;
 
 $Id$ = idade n.
 
 ### Análise econômica
 
-\  Com o intuito de determinar a idade ótima de corte foi realizada uma análise econômica, considerando que os anos e custos das operações foram anexados neste documento, para facilitar a visualização das premissas usadas. Logo, a partir desses dados, foi gerada uma planilha de fluxo de caixa de cada talhão analisado, com valores de Receitas e Custos para cada ano de plantio. Desse modo, os seguintes valores foram calculados: Valor Presente das Receitas (VPR), Valor Presente dos Custos (VPC), Valor Presente 
-Líquido (VPL), Valor Presente Líquido Infinito (VPL inf), Custo Médio da Produção (CMPr), Relação Benefício Custo (B/C), Valor Esperado da Terra (VET) e a Taxa Interna de Retorno (TIR).
+  Com o intuito de determinar a idade ótima de corte foi realizada uma
+análise econômica, considerando que os anos e custos das operações foram
+anexados neste documento, para facilitar a visualização das premissas
+usadas. Logo, a partir desses dados, foi gerada uma planilha de fluxo de
+caixa de cada talhão analisado, com valores de Receitas e Custos para
+cada ano de plantio. Desse modo, os seguintes valores foram calculados:
+Valor Presente das Receitas (VPR), Valor Presente dos Custos (VPC),
+Valor Presente Líquido (VPL), Valor Presente Líquido Infinito (VPL inf),
+Custo Médio da Produção (CMPr), Relação Benefício Custo (B/C), Valor
+Esperado da Terra (VET) e a Taxa Interna de Retorno (TIR).
 
-\  A análise econômica foi realizada de forma principal através do VPL, considerando um horizonte infinito (VPL infinito), pois dessa maneira é possível comparar projetos com durações diferentes. Dessa forma os projetos foram avaliados. Algumas das fórmulas estão apresentadas abaixo:
+  A análise econômica foi realizada de forma principal através do VPL,
+considerando um horizonte infinito (VPL infinito), pois dessa maneira é
+possível comparar projetos com durações diferentes. Dessa forma os
+projetos foram avaliados. Algumas das fórmulas estão apresentadas
+abaixo:
 
-$$VPL = VP - VPC$$ 
+$$VPL = VP - VPC$$
 
 Sendo:
 
-$VPC$ = valor presente do custo 
+$VPC$ = valor presente do custo
 
 $VP$ = valor presente
 
 $$
 VPLinf = \frac{VP(1+i)^t} {(1+i)^t-1}  = \frac{VP} {(1-(1+i)^t)}
-$$ 
+$$
 
 Sendo:
 
-$t$ em anos e taxa $i$ anual 
+$t$ em anos e taxa $i$ anual
 
-ou 
+ou
 
 $t$ em meses e taxa $i$ mensal
 
+$$BC = \frac{VP}{VPC}$$ Em que:
 
-$$BC = \frac{VP}{VPC}$$
-Em que:
-
-$VPC$ = valor presente do custo 
-
+$VPC$ = valor presente do custo
 
 $$\sum_{j=0}^{n} C_j(1 + TIR)^{−j}$$
 
@@ -222,23 +243,22 @@ $j$ = período em que os custos ou receitas ocorrem;
 
 $n$ = duração do projeto.
 
-\  
+ 
 
-\  Esses valores gerados serão devidamente comentados posteriormente neste relatório, de acordo com as interpretações geradas e suas motivações.
+  Esses valores gerados serão devidamente comentados posteriormente
+neste relatório, de acordo com as interpretações geradas e suas
+motivações.
 
 ### Análise de sensibilidade
 
-\  Portanto, com a análise econômica florestal realizada, foram especulados cenários existentes e suas respectivas alterações em valores como o custo da terra, custos de venda da madeira e custos atrelados
-ao transporte da madeira.
-
+  Portanto, com a análise econômica florestal realizada, foram
+especulados cenários existentes e suas respectivas alterações em valores
+como o custo da terra, custos de venda da madeira e custos atrelados ao
+transporte da madeira.
 
 ## Resultados e discussão
 
-```{r, echo=FALSE, include = FALSE}
-# gráfico de sítios
-# Avaliação de estabilidade dos modelos Bailey & Clutter Polimórfico e Chapman & Richards Polimórfico.
-
-### Ajustes dos modelos de classificação de sítios e análise estatistica dos ajustes
+```{r setup, include=FALSE, echo = FALSE}
 library( cmrinvflor )
 library( ggplot2 )
 library( magick )
@@ -251,47 +271,17 @@ names( dados_npar )
 dados_npar <- dados_npar[ c( "parcela", "idade", "hdom", "ab", "vtsc", "vtcc" ) ]
 
 dados <- cmrinvflor::parear_seqmed( dados_npar )
-head( dados )
+```
 
-img <- image_read( "chestreelogo.PNG" )
+### Estatísticas dos modelos e classes de sítio
 
-theme_chesTree <- theme_bw( ) +
-  theme( panel.grid.major = element_line( color = "gray70", linetype = "dashed" ),
-         panel.grid.minor = element_blank( ),
-         axis.title = element_text( size = rel( 1.25 ) ),
-         axis.text = element_text( size = rel( 1.1 ) ),
-         legend.position = c( 0, 1 ),
-         legend.justification = c( -0.05, 1.02 ),
-         legend.title = element_blank( ),
-         legend.text = element_text( size = rel( 0.8 ) ) )
 
-p <- ggplot( dados, aes( x = idade2, y = hdom2, color = "lightgreen" ) ) +
-  geom_point( size = 1.5 , alpha = 0.5) +
-  #labs( title = "Testando título" ) +
-  #geom_hline( yintercept = 0, linetype = "dashed" ) +
-  geom_smooth( se = TRUE, method = "loess", formula = "y ~ x" ) +
-  scale_y_continuous( name = "Altura Dominante (cm)" ) +
-  scale_x_continuous( name = "Idade (meses)" ) +
-  scale_color_manual( values = c( "#50B23D","#0072B2" ), guide = "none" ) +
-  scale_fill_manual( values = c( "#E69F00","#0072B2" ), guide = "none" ) +
-  theme_chesTree
+```{r}
+### Ajustes dos modelos de classificação de sítios 
 
-ggdraw( ) +
-  draw_plot( p, x = 0, y = 0.15, width = 1, height = 0.85 ) +
-  draw_image( img, x = 0.65, y = 0.02, width = 0.35, height = 0.2 )  
+# Ajustes Bailey Clutter --------------------------------------------------
 
-# A curva no gráfico acima é conhecida como LOESS 
-# (suavização de dispersão estimada localmente),
-# e ela nos mostra o melhor ajuste sem assumir
-# que os dados devem se ajustar a alguma forma de distribuição.
-# Além disso, foi apresentado o erro padrão em torno da curva em cinza.
-
-# par( mfrow = c( 1, 1 ) )
-# with( dados, plot( hdom1, hdom2, pch = 20 ) )
-
-# Ajustes Bayley Clutter --------------------------------------------------
-
-# Ajuste Bayley Clutter polimórfico
+# Ajuste Bailey Clutter polimórfico
 
 bc_poli <- "hdom2~b0*((hdom1/b0)^((idade1/idade2)^b2))"
 
@@ -309,9 +299,9 @@ syxbcpoli <- summary( ajbcpoli )$sigma
 syxperbcpoli <- syxbcpoli / mean( dados$hdom2 ) * 100
 
 #coeficientes bc poli
-cfbcpoli <- coef( ajbcpoli )
+cfbcpoli <- as.vector( coef( ajbcpoli ) )
 
-#Ajuste Bayley Clutter anamórfico
+#Ajuste Bailey Clutter anamórfico
 
 bc_ana <- "hdom2~hdom1/(exp(b1*((idade2^b2)-(idade1^b2))))"
 
@@ -329,7 +319,7 @@ syxbcana <- summary( ajbcana )$sigma
 syxperbcana <- syxbcana / mean( dados$hdom2 ) * 100
 
 #coeficientes bc poli
-cfbcana <- coef( ajbcana )
+cfbcana <- as.vector( coef( ajbcana ) )
 
 # Ajustes Chapman e Richards --------------------------------------------------
 
@@ -351,7 +341,7 @@ syxcrpoli <- summary( ajcrpoli )$sigma
 syxpercrpoli <- syxcrpoli / mean( dados$hdom2 ) * 100
 
 #coeficientes cr poli
-cfcrpoli <- coef( ajcrpoli )
+cfcrpoli <- as.vector( coef( ajcrpoli ) )
 
 #Ajuste Chapman e Richards anamórfico
 
@@ -371,7 +361,7 @@ syxcrana <- summary( ajcrana )$sigma
 syxpercrana <- syxcrana / mean( dados$hdom2 ) * 100
 
 #coeficientes cr poli
-cfcrana <- coef( ajcrana )
+cfcrana <- as.vector( coef( ajcrana ) )
 
 # Ajustes Schumacher --------------------------------------------------
 
@@ -392,7 +382,7 @@ syxschpoli <- summary( ajschpoli )$sigma
 syxperschpoli <- syxschpoli / mean( dados$hdom2 ) * 100
 
 #coeficientes sch poli
-cfschpoli <- coef( ajschpoli )
+cfschpoli <- as.vector( coef( ajschpoli ) )
 
 #Ajuste Schumacher anamórfico
 
@@ -411,14 +401,78 @@ syxschana <- summary( ajschana )$sigma
 syxperschana <- syxschana / mean( dados$hdom2 ) * 100
 
 #coeficientes sch ana
-cfschana <- coef( ajschana )
+cfschana <- as.vector( coef( ajschana ) )
+
+```
+
+\  A Tabela 1 apresenta todos os coeficientes obtidos de cada modelo testado e seus respectivos valores de erro padrão residual. Antes de analisar os resultados, é importante salientar que quanto maior o erro padrão residual mais distante do ideal o modelo se encontra, ou seja, os resíduos estão mais distantes do valor real. Desse
+modo, comparando os modelos de forma **isolada a partir dessa métrica
+estatística** os modelos de Bailey-Clutter polimórfico e Chapman-Richards polimórfico, obtiveram os melhores resultados para as estimativas realizadas. Sendo possível destacar o polimorfismo como a forma que mais se aproxima do ideal em cada modelo testado, o que é esperado teoricamente, considerando os fatores biológicos que afetam as florestas. 
+
+
+| Modelos                        | $\beta_0$               |$\beta_1$                  |$\beta_2$                 | Erro padrão residual (%) |  
+|--------------------------------|-------------------------|---------------------------|--------------------------|--------------------------|
+| Bailey-Clutter (polimórfico)   |`r round(cfbcpoli,6)[1]` |                           |`r round(cfbcpoli,6)[2]`  |`r round(syxperbcpoli, 2)`|
+| Bailey-Clutter (anamórfico)    |                         |`r round(cfbcana, 6)[1]`   |`r round(cfbcana,6)[2]`   |`r round(syxperbcana, 2)` |
+| Chapman-Richards (polimórfico) |`r round(cfcrpoli,6)[1]` |`r round(cfcrpoli, 6)[2]`  |                          |`r round(syxpercrpoli, 2)`|
+| Chapman-Richards (anamórfico)  |                         |`r round(cfcrana, 6)[1]`   |`r round(cfcrana,6)[2]`   |`r round(syxpercrana, 2)` |
+| Schumacher (polimórfico)       |`r round(cfschpoli,6)[1]`|                           |                          |`r round(syxperschpoli,2)`|
+| Schumacher (anamórfico)        |                         |`r round(cfschana, 6)[1]`  |                          |`r round(syxperschana, 2)`|
+: Coeficientes e erro padrão residual obtidos com o ajuste dos modelos.
+
+
+\ Dessa forma, o modelo de Chapman-Richards foi o modelo escolhido, pois além do seu desempenho através da métrica citada anteriormente ter sido o superior, esse foi o modelo que apresentou a melhor distribuição de resíduos devido os resultados estarem mais agrupados em torno do zero (Figura 1), quando comparado com as distribuições dos demais modelos testados a um nível de significância de 5% (anexo).
+
+
+```{r, echo=FALSE, include = FALSE}
+# gráfico de sítios
+# Avaliação de estabilidade dos modelos Bailey & Clutter Polimórfico e Chapman & Richards Polimórfico.
+
+### Análise gráfica dos #ajustes
+
+img <- image_read( "chestreelogo.PNG" )
+
+theme_chesTree <- theme_bw( ) +
+  theme( panel.grid.major = element_line( color = "gray70", linetype = "dashed" ),
+         panel.grid.minor = element_blank( ),
+         axis.title = element_text( size = rel( 0.7 ) ),
+         axis.text = element_text( size = rel( 1.0 ) ),
+         legend.position = c( 0, 1 ),
+         legend.justification = c( -0.05, 1.02 ),
+         legend.title = element_blank( ),
+         legend.text = element_text( size = rel( 0.8 ) ) )
+
+p <- ggplot( dados, aes( x = idade2, y = hdom2, color = "lightgreen" ) ) +
+  geom_point( size = 1.5 , alpha = 0.5) +
+  #labs( title = "Testando título" ) +
+  #geom_hline( yintercept = 0, linetype = "dashed" ) +
+  geom_smooth( se = TRUE, method = "loess", formula = "y ~ x" ) +
+  scale_y_continuous( name = "Altura Dominante (cm)" ) +
+  scale_x_continuous( name = "Idade (meses)" ) +
+  scale_color_manual( values = c( "#50B23D","#0072B2" ), guide = "none" ) +
+  scale_fill_manual( values = c( "#E69F00","#0072B2" ), guide = "none" ) +
+  theme_chesTree
+
+hdom2_idade2_plot_anexos <- ggdraw( ) +
+  draw_plot( p, x = 0, y = 0.15, width = 1, height = 0.85 ) +
+  draw_image( img, x = 0.65, y = 0.02, width = 0.35, height = 0.2 )  
+
+# A curva no gráfico acima é conhecida como LOESS 
+# (suavização de dispersão estimada localmente),
+# e ela nos mostra o melhor ajuste sem assumir
+# que os dados devem se ajustar a alguma forma de distribuição.
+# Além disso, foi apresentado o erro padrão em torno da curva em cinza.
+
+# par( mfrow = c( 1, 1 ) )
+# with( dados, plot( hdom1, hdom2, pch = 20 ) )
+
 
 
 # Gráficos ----------------------------------------------------------------
 
 #Calculando os resíduos
 
-#Bayley clutter
+#Bailey clutter
 dados$resbcpoli <- residuals( ajbcpoli ) #polimórfico
 dados$resbcana <- residuals( ajbcana ) #anamórfico
 
@@ -435,23 +489,24 @@ dados$resschana <- residuals( ajschana ) #anamórfico
 theme_chesTree <- theme_bw( ) +
   theme( panel.grid.major = element_line( color = "gray70", linetype = "dashed" ),
          panel.grid.minor = element_blank( ),
-         axis.title = element_text( size = rel( 1.25 ) ),
+         plot.title = element_text( size = 7 ),
+         axis.title = element_text( size = rel( 0.9 ) ),
          axis.text = element_text( size = rel( 0.6 ) ),
          legend.position = c( 0, 1 ),
-         legend.justification = c( -0.05, 1.02 ),
+         legend.key = element_rect( fill = "transparent" ),
+         legend.key.size = unit( 0.05, "cm" ),
+         legend.justification = c( -0.01, 0.9 ),
          legend.title = element_blank( ),
-         legend.text = element_text( size = rel( 1.1 ) ) )
+         legend.text = element_text( size = rel( 0.5 ) ) )
 
 bcnorm_poli <- ggplot( data = dados, mapping = aes( sample = resbcpoli ) ) +
-  geom_qq_band( bandType = "ks", mapping = aes( fill = "KS" ), alpha = 0.5 ) +
-  geom_qq_band( bandType = "ts", mapping = aes( fill = "TS" ), alpha = 0.5 ) +
-  geom_qq_band( bandType = "pointwise", mapping = aes( fill = "Pointwise" ), alpha = 0.5 ) +
+  geom_qq_band( bandType = "pointwise", mapping = aes( fill = "Normal" ), alpha = 0.5 ) +
   geom_qq_band( bandType = "boot", mapping = aes( fill = "Bootstrap" ), alpha = 0.5 ) +
   stat_qq_line( ) +
   stat_qq_point( ) +
-  labs( title = "Bayley-Clutter Polimórfico",
-        x = "Quantis Normais", 
-        y = "Quantis de Amostra" ) +
+  labs( title = "Bailey-Clutter Polimórfico",
+        x = "", 
+        y = "" ) +
   scale_fill_discrete( "Faixas de Confiança" ) +
   theme_chesTree
 
@@ -460,20 +515,24 @@ bcnorm_ana <- ggplot( data = dados, mapping = aes( sample = resbcana ) ) +
   geom_qq_band( bandType = "pointwise", mapping = aes( fill = "Normal" ), alpha = 0.5 ) +
   stat_qq_line( ) +
   stat_qq_point( ) +
-  labs( title = "Bayley-Clutter Anamórfico",
-        x = "Quantis Normais", 
-        y = "Quantis de Amostra" ) +
-  scale_fill_discrete( "Faixas de Confiança" )
+  labs( title = "Bailey-Clutter Anamórfico",
+        x = "", 
+        y = "Quantil amostral" ) +
+  scale_fill_discrete( "Faixas de Confiança" )+
+  theme_chesTree
 
 crnorm_poli <- ggplot( data = dados, mapping = aes( sample = rescrpoli ) ) +
+  geom_qq_band( bandType = "ks", mapping = aes( fill = "KS" ), alpha = 0.5 ) +
+  geom_qq_band( bandType = "ts", mapping = aes( fill = "TS" ), alpha = 0.5 ) +
   geom_qq_band( bandType = "boot", mapping = aes( fill = "Bootstrap" ), alpha = 0.5 ) +
-  geom_qq_band( bandType = "pointwise", mapping = aes( fill = "Normal" ), alpha = 0.5 ) +
+  geom_qq_band( bandType = "pointwise", mapping = aes( fill = "Pointwise" ), alpha = 0.5 ) +
   stat_qq_line( ) +
   stat_qq_point( ) +
   labs( title = "Chapman-Richards Polimórfico",
         x = "Quantis Normais", 
         y = "Quantis de Amostra" ) +
-  scale_fill_discrete( "Faixas de Confiança" )
+  scale_fill_discrete( "Faixas de Confiança" ) +
+  theme_chesTree
 
 crnorm_ana <- ggplot( data = dados, mapping = aes( sample = rescrana ) ) +
   geom_qq_band( bandType = "boot", mapping = aes( fill = "Bootstrap" ), alpha = 0.5 ) +
@@ -482,8 +541,9 @@ crnorm_ana <- ggplot( data = dados, mapping = aes( sample = rescrana ) ) +
   stat_qq_point( ) +
   labs( title = "Chapman-Richards Anamórfico",
         x = "Quantis Normais", 
-        y = "Quantis de Amostra" ) +
-  scale_fill_discrete( "Faixas de Confiança" )
+        y = "" ) +
+  scale_fill_discrete( "Faixas de Confiança" )+
+  theme_chesTree
 
 scnorm_poli <- ggplot( data = dados, mapping = aes( sample = resschpoli ) ) +
   geom_qq_band( bandType = "boot", mapping = aes( fill = "Bootstrap" ), alpha = 0.5 ) +
@@ -492,8 +552,9 @@ scnorm_poli <- ggplot( data = dados, mapping = aes( sample = resschpoli ) ) +
   stat_qq_point( ) +
   labs( title = "Shcumacher Polimórfico",
         x = "Quantis Normais", 
-        y = "Quantis de Amostra" ) +
-  scale_fill_discrete( "Faixas de Confiança" )
+        y = "Quantil amostral" ) +
+  scale_fill_discrete( "Faixas de Confiança" )+
+  theme_chesTree
 
 scnorm_ana <- ggplot( data = dados, mapping = aes( sample = resschana ) ) +
   geom_qq_band( bandType = "boot", mapping = aes( fill = "Bootstrap" ), alpha = 0.5 ) +
@@ -502,56 +563,59 @@ scnorm_ana <- ggplot( data = dados, mapping = aes( sample = resschana ) ) +
   stat_qq_point( ) +
   labs( title = "Schumacher Anamórfico",
         x = "Quantis Normais", 
-        y = "Quantis de Amostra" ) +
-  scale_fill_discrete( "Faixas de Confiança" )
+        y = "" ) +
+  scale_fill_discrete( "Faixas de Confiança" )+
+  theme_chesTree
 
 # "pointwise" constrói bandas de confiança simultâneas com base na distribuição normal;
 # "boot" cria bandas de confiança pontuais com base em um boostrap paramétrico;
 # "ks" constrói bandas de confiança simultâneas com base em uma inversão do teste de Kolmogorov-Smirnov;
 # "ts" constrói bandas de confiança sensíveis à cauda, como proposto por Aldor-Noiman et al. (2013).
 
-arranged_norm <- grid.arrange( bcnorm_ana, 
-                               crnorm_poli, crnorm_ana,
-                               scnorm_poli, scnorm_ana,
-                               ncol = 2, nrow = 3 )
+margin <- theme( plot.margin = unit( c( 0, 0, 0, 0 ), "cm" ) )
 
+arranged_norm <- grid.arrange(
+                               grobs = lapply( list( bcnorm_ana, bcnorm_poli, crnorm_ana,
+                               scnorm_poli, scnorm_ana ), "+", margin ), 
+                               heights = c( 4,4 ) )
 # anexos
-ggdraw( ) +
+norm_plot_anexos <- ggdraw( ) +
   draw_plot( arranged_norm, x = 0, y = 0.15, width = 1, height = 0.85 ) +
-  draw_image( img, x = 0.55, y = 0.02, width = 0.35, height = 0.5 )  
+  draw_image( img, x = 0.66, y = 0.02, width = 0.35, height = 0.65 )  
 
 
 ### Resíduos
 
 res_plot_bcpoli <- ggplot( dados, aes( x = idade1, y = resbcpoli, color = "lightgreen" ) ) +
-  geom_point( size = 1.5 , alpha = 0.5 ) +
-  labs( title = "Bayley-Clutter Polimórfico" ) +
+  geom_point( size = 0.9 , alpha = 0.5 ) +
+  labs( title = "Bailey-Clutter Polimórfico" ) +
   geom_hline( yintercept = 0, col = "black" ) +
   geom_smooth( se = TRUE, method = "loess", formula = "y ~ x" ) +
-  scale_y_continuous( limits = c( -8, 8 ), breaks = c( -8:8  ), name = "Resíduos (m)" ) +
-  scale_x_continuous( name = "Idade (meses)" ) +
+  scale_y_continuous( limits = c( -8, 8 ), breaks = c(-8, -4, 0, 4, 8 ), name = "" ) +
+  scale_x_continuous( name = "" ) +
   scale_color_manual( values = c( "#50B23D","#0072B2" ), guide = "none" ) +
   scale_fill_manual( values = c( "#E69F00","#0072B2" ), guide = "none" ) +
   theme_chesTree
 
 # anexos
 res_plot_bcana <- ggplot( dados, aes( x = idade1, y = resbcana, color = "lightgreen" ) ) +
-  geom_point( size = 1.5 , alpha = 0.5 ) +
-  labs( title = "Bayley-Clutter Anamórfico" ) +
+  geom_point( size = 0.9 , alpha = 0.5 ) +
+  labs( title = "Bailey-Clutter Anamórfico" ) +
   geom_hline( yintercept = 0, col = "black" ) +
   geom_smooth( se = TRUE, method = "loess", formula = "y ~ x" ) +
-  scale_y_continuous( limits = c( -8, 8 ), breaks = c( -8:8  ), name = "Resíduos (m)" ) +
-  scale_x_continuous( name = "Idade (meses)" ) +
+  scale_y_continuous( name = "" ,
+                      limits = c( -8, 8 ), breaks = c( -8, -4, 0, 4, 8  ) ) +
+  scale_x_continuous( name = "" ) +
   scale_color_manual( values = c( "#50B23D","#0072B2" ), guide = "none" ) +
   scale_fill_manual( values = c( "#E69F00","#0072B2" ), guide = "none" ) +
   theme_chesTree
 
 res_plot_crpoli <- ggplot( dados, aes( x = idade1, y = rescrpoli, color = "lightgreen" ) ) +
   geom_point( size = 1.5 , alpha = 0.5 ) +
-  labs( title = "Chapman-Richards Polimórfico" ) +
+  labs( title = "" ) +
   geom_hline( yintercept = 0, col = "black" ) +
   geom_smooth( se = TRUE, method = "loess", formula = "y ~ x" ) +
-  scale_y_continuous( limits = c( -8, 8 ), breaks = c( -8:8  ), name = "Resíduos (m)" ) +
+  scale_y_continuous( limits = c( -8, 8 ), breaks = c( -8, -4, 0, 4, 8  ), name = "Resíduos (m)" ) +
   scale_x_continuous( name = "Idade (meses)" ) +
   scale_color_manual( values = c( "#50B23D","#0072B2" ), guide = "none" ) +
   scale_fill_manual( values = c( "#E69F00","#0072B2" ), guide = "none" ) +
@@ -559,56 +623,67 @@ res_plot_crpoli <- ggplot( dados, aes( x = idade1, y = rescrpoli, color = "light
 
 arranged_res_norm <- grid.arrange( crnorm_poli, res_plot_crpoli, ncol = 2 )
 
-ggdraw( ) +
+res_norm_plot <- ggdraw( ) +
   draw_plot( arranged_res_norm, x = 0, y = 0.15, width = 1, height = 0.85 ) +
   draw_image( img, x = 0.35, y = 0.02, width = 0.35, height = 0.2 )  
 
-
 res_plot_crana <- ggplot( dados, aes( x = idade1, y = rescrana, color = "lightgreen" ) ) +
-  geom_point( size = 1.5 , alpha = 0.5 ) +
+  geom_point( size = 0.9 , alpha = 0.5 ) +
   labs( title = "Chapman-Richards Anamórfico" ) +
   geom_hline( yintercept = 0, col = "black" ) +
   geom_smooth( se = TRUE, method = "loess", formula = "y ~ x" ) +
-  scale_y_continuous( limits = c( -8, 8 ), breaks = c( -8:8  ), name = "Resíduos (m)" ) +
-  scale_x_continuous( name = "Idade (meses)" ) +
+  scale_y_continuous( limits = c( -8, 8 ), breaks = c(-8, -4, 0, 4, 8 ), name = "Resíduos (m)" ) +
+  scale_x_continuous( name = "" ) +
   scale_color_manual( values = c( "#50B23D","#0072B2" ), guide = "none" ) +
   scale_fill_manual( values = c( "#E69F00","#0072B2" ), guide = "none" ) +
   theme_chesTree
 
 res_plot_schpoli <- ggplot( dados, aes( x = idade1, y = resschpoli, color = "lightgreen" ) ) +
-  geom_point( size = 1.5 , alpha = 0.5 ) +
+  geom_point( size = 0.9 , alpha = 0.5 ) +
   labs( title = "Schumacher Polimórfico" ) +
   geom_hline( yintercept = 0, col = "black" ) +
   geom_smooth( se = TRUE, method = "loess", formula = "y ~ x" ) +
-  scale_y_continuous( limits = c( -8, 8 ), breaks = c( -8:8  ), name = "Resíduos (m)" ) +
+  scale_y_continuous( name = "" ,
+                      limits = c( -8, 8 ), breaks = c(-8, -4, 0, 4, 8 ), 
+                      ) +
   scale_x_continuous( name = "Idade (meses)" ) +
   scale_color_manual( values = c( "#50B23D","#0072B2" ), guide = "none" ) +
   scale_fill_manual( values = c( "#E69F00","#0072B2" ), guide = "none" ) +
   theme_chesTree
 
 res_plot_schana <- ggplot( dados, aes( x = idade1, y = resschana, color = "lightgreen" ) ) +
-  geom_point( size = 1.5 , alpha = 0.5 ) +
+  geom_point( size = 0.9 , alpha = 0.5 ) +
   labs( title = "Schumacher Anamórfico" ) +
   geom_hline( yintercept = 0, col = "black" ) +
   geom_smooth( se = TRUE, method = "loess", formula = "y ~ x" ) +
-  scale_y_continuous( limits = c( -8, 8 ), breaks = c( -8:8  ), name = "Resíduos (m)" ) +
+  scale_y_continuous( limits = c( -8, 8 ), breaks = c(-8, -4, 0, 4, 8 ), name = "" ) +
   scale_x_continuous( name = "Idade (meses)" ) +
   scale_color_manual( values = c( "#50B23D","#0072B2" ), guide = "none" ) +
   scale_fill_manual( values = c( "#E69F00","#0072B2" ), guide = "none" ) +
   theme_chesTree
 
-arranged_res <- grid.arrange( res_plot_bcpoli, res_plot_bcana, 
+margin <- theme( plot.margin = unit( c( 0.01, 0.0001, 0.0001, 0.2 ), "cm" ) )
+arranged_res <- grid.arrange( ncol = 2, nrow = 3, 
+                              grobs = lapply( list( res_plot_bcpoli, res_plot_bcana, 
                               res_plot_crana,
-                              res_plot_schpoli, res_plot_schana,
-                              ncol = 2, nrow = 3 )
+                              res_plot_schpoli, res_plot_schana ), "+", margin ) )
 # anexos
-ggdraw( ) +
+res_plot_anexos <- ggdraw( ) +
   draw_plot( arranged_res, x = 0, y = 0.15, width = 1, height = 0.85 ) +
   draw_image( img, x = 0.58, y = 0.02, width = 0.35, height = 0.5 )  
 
 ```
 
-### Estatísticas dos modelos
+
+```{r}
+#| fig-cap: Gráfico quantil-quantil e gráfico da distribuição de resíduos.
+
+res_norm_plot
+
+```
+
+\  Ademais, também na Figura 1, é possível observar que o gráfico de qunatis gerou faixas de confiança simultâneas com base na distribuição normal, técnica conhecida como _Pointwise_; faixas de confiança pontuais com base em um bootstrap paramétrico; bandas de confiança simultâneas com base em uma inversão do teste de Kolmogorov-Smirnov (KS) e faixas de confiança sensíveis à cauda, como proposto por [@aldor2013power]. E a reta estimada estava contida dentro desses intervalos, para todas as técnicas citadas, afirmando normalidade.
+
 
 ### Prognose e idade ótima de corte
 
@@ -620,10 +695,16 @@ ggdraw( ) +
 
 ## Referências
 
-```{r}
 
+```{r}
+#| fig-cap: Gráficos da distribuição de resíduos dos modelos que não foram selecionados.
+
+res_plot_anexos
 ```
 
 ```{r}
+#| fig-cap: Gráficos quantil-quantil dos modelos que não foram selecionados.
 
+norm_plot_anexos
 ```
+
