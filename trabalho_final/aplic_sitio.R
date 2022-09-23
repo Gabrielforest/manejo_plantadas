@@ -21,9 +21,8 @@ clsbcpoli <- class_sitio_dif_alg( amostras = ifc,
                                   iref = 72,
                                   graf_curvas = T )
 
-View( clsbcpoli$estabilidade )
-View( clsbcpoli$amostras )
-
+clsbcpoli_estabilidade <- clsbcpoli$estabilidade
+clsbcpoli_estabilidade$modelo <- "Bailey-Clutter polimórfico"
 
 # Bailey e Clutter Anamórfico
 bcana <- "hdom1/(exp(b1*((idade2^b2)-(idade1^b2))))"
@@ -35,8 +34,8 @@ clsbcana <- class_sitio_dif_alg( amostras = ifc,
                                  iref = 72,
                                  graf_curvas = T )
 
-View( clsbcana$estabilidade )
-View( clsbcana$amostras )
+clsbcana_estabilidade <- clsbcana$estabilidade
+clsbcana_estabilidade$modelo <- "Bailey-Clutter anamórfico"
 
 # Chapman e Richards Polimórfico
 crpoli <- "b0*((hdom1/b0)^((log(1-exp(b1*idade2)))/(log(1-exp(b1*idade1)))))"
@@ -48,8 +47,8 @@ clscrpoli <- class_sitio_dif_alg( amostras = ifc,
                                   iref = 72,
                                   graf_curvas = T )
 
-View( clscrpoli$estabilidade )
-View( clscrpoli$amostras )
+clscrpoli_estabilidade <- clscrpoli$estabilidade
+clscrpoli_estabilidade$modelo <- "Chapman-Richards polimórfico"
 
 # Chapman e Richards Anamórfico
 crana <- "((hdom1*(1-exp(b1*(idade2))))/(1-exp(b1*(idade1))))^b2"
@@ -61,8 +60,8 @@ clscrana <- class_sitio_dif_alg( amostras = ifc,
                                  iref = 72,
                                  graf_curvas = T )
 
-View( clscrana$estabilidade )
-View( clscrana$amostras )
+clscrana_estabilidade <- clscrana$estabilidade
+clscrana_estabilidade$modelo <- "Chapman-Richards anamórfico"
 
 # Schumacher Polimórfico
 schpoli <- "b0*((hdom1/b0)^((idade1)/(idade2)))"
@@ -74,8 +73,10 @@ clsschpoli <- class_sitio_dif_alg( amostras = ifc,
                                    iref = 72,
                                    graf_curvas = T )
 
-View( clsschpoli$estabilidade )
 View( clsschpoli$amostras )
+
+clsschpoli_estabilidade <- clsschpoli$estabilidade
+clsschpoli_estabilidade$modelo <- "Schumacher polimórfico"
 
 # Schumacher Anamórfico
 schana <- "hdom1*(exp(b1*((1/idade2)-(1/idade1))))"
@@ -87,6 +88,15 @@ clsschana <- class_sitio_dif_alg( amostras = ifc,
                                   iref = 72,
                                   graf_curvas = T )
 
-View( clsschana$estabilidade )
-View( clsschana$amostras )
+clsschana_estabilidade <- clsschana$estabilidade
+clsschana_estabilidade$modelo <- "Schumacher anamórfico"
+
+
+tabela_estabilidade <- rbind( clsbcana_estabilidade, clscrana_estabilidade,
+                              clsschpoli_estabilidade, clsschana_estabilidade )
+
+tabela_estabilidade_melhores_modelos <- rbind( clsbcpoli_estabilidade, clscrpoli_estabilidade )
+
+
+
 
