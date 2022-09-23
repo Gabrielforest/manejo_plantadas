@@ -367,4 +367,3 @@ ggdraw( ) +
   draw_image( img, x = 0.58, y = 0.02, width = 0.35, height = 0.5 )  
 
 margin <- theme( plot.margin = unit( c( 2, 2, 2, 2 ), "cm" ) )
-grid.arrange( grobs = lapply( pl, "+", margin ) )

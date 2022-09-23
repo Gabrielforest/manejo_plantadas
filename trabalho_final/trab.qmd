@@ -29,7 +29,7 @@ editor_options:
 
 ## Apresentação
 
-  A chesTree é uma empresa de consultoria e serviços florestais,
+\  A chesTree é uma empresa de consultoria e serviços florestais,
 especializada nos processos que envolvem medições e realizações de
 inventários. A chesTree conta com profissionais qualificados e renomados
 do mercado, atuando na área florestal desde 1990. A sede da empresa está
@@ -37,7 +37,7 @@ localizada em São Paulo, mas conta com filiais espalhadas por todo país.
 
 ## Introdução
 
-  Um inventário florestal é uma prática que busca a quantificação, e por
+\  Um inventário florestal é uma prática que busca a quantificação, e por
 conseguinte, a qualificação das florestas em diferentes aspectos, como a
 produção de madeira e outros possíveis produtos, através do uso de
 técnicas estatísticas de amostragem. Considerando que, o inventário visa
@@ -45,7 +45,7 @@ obter o máximo de informações de uma floresta com a máxima precisão e o
 mínimo custo. Esses três fatores desempenham papel importante no
 planejamento de um inventário florestal [@junior2020measure].
 
-  Sendo assim, o conhecimento dos processos de crescimento e produção de
+\  Sendo assim, o conhecimento dos processos de crescimento e produção de
 um povoamento florestal são indubitavelmente necessários ao
 gerenciamento racional das florestas plantadas
 [@cosenza2015classificaccao]. Logo, as técnicas estatísticas que
@@ -57,14 +57,14 @@ produção de um povoamento florestal dependem de diversos fatores que
 podem ser quantificados e planejados, como a idade, o sítio (potencial
 produtivo), os tratos silviculturais, entre outros.
 
-  Dessa forma, com a intenção de prever o crescimento, são estimadas
+\  Dessa forma, com a intenção de prever o crescimento, são estimadas
 variáveis dendrométricas e classes de produtividade ou sítio. Portanto,
 a determinação de sítio é de suma importância durante todo o sistema de
 prognose e definição das classes de produtividade [@demetodos]. Isso se
 deve ao fato de que há uma amplitude de variação dos fatores biológicos,
 os quais refletem no crescimento das florestas.
 
-  Desse modo, é possível concluir que através das estimativas citadas
+\  Desse modo, é possível concluir que através das estimativas citadas
 anteriormente se pode alcançar a máxima eficiência volumétrica, ou seja,
 a idade em que o povoamento atinge ao maximizar o incremento médio anual
 (IMA), pois o mesmo apresenta um único ponto de máximo quando associado
@@ -76,7 +76,7 @@ qual é perceptível através desse parâmetro.
 
 ## Objetivo
 
-  O presente relatório tem como objetivo utilizar dados de um inventario
+\  O presente relatório tem como objetivo utilizar dados de um inventario
 florestal contínuo de plantios clonais de *Eucalyptus* sp. no estado de
 São Paulo para:
 
@@ -91,7 +91,7 @@ São Paulo para:
 
 ### Coleta de dados e classificação de sítios
 
-  Inicialmente, os primeiros aspectos da área foram fornecidos pelo
+\  Inicialmente, os primeiros aspectos da área foram fornecidos pelo
 proprietário da área e foram analisadas presencialmente na fazenda, e
 essas informações eram sobre o espaçamento, tipo de solo, relevo,
 presença de patógenos, umidade do solo, entre outras informações gerais.
@@ -105,7 +105,7 @@ através de um hipsômetro Suunto. As informações adquiridas foram
 armazenadas em tablets, assim como o registro de informações como a
 localização e identificação da área e locais de acesso.
 
-  Com isso, o procedimento de amostragem que foi adotado na realização
+\  Com isso, o procedimento de amostragem que foi adotado na realização
 do inventário após a análise dos dados foi a amostragem casual simples
 com parcelas circulares. Esse tipo de amostragem é um método utilizado
 em populações homogêneas e foi escolhido, justamente, por conta dessa
@@ -114,11 +114,11 @@ florestal citado anteriormente foi repetido ao longo dos anos, de forma
 contínua, com o objetivo de processar os dados nos softwares R 4.2.1 e
 Microsoft Excel.
 
- Sendo assim, para a classificação de sítios, foram avaliados os modelos
+\  Sendo assim, para a classificação de sítios, foram avaliados os modelos
 hipsométricos apresentados a seguir, tanto na forma anamórfica quanto
 polimórfica.
 
- 
+\
 
 Chapman-Richards
 
@@ -144,13 +144,13 @@ Bailey-Clutter
 -   polimórfico:
     $Hd_2 = \beta_0 \left( \frac{ Hd_1 } { \beta_0 } \right )^{ \left( \frac{ Id_1 } { Id_2 } \right ) ^{ \beta_2 } }$
 
-  A partir da avaliação feita com base na análise gráfica e atributos
+\  A partir da avaliação feita com base na análise gráfica e atributos
 estatísticos gerados, foi escolhido o melhor modelo para prosseguir com
 a classificação de sítio. Dessa forma, a idade referência utilizada para
 classificar as parcelas medidas foi a de 72 meses, com sítios divididos
 em quatro classes.
 
-  Além disso, visando garantir a melhor escolha possível do modelo foram
+\  Além disso, visando garantir a melhor escolha possível do modelo foram
 comparadas as estabilidades entre parcelas dos dois melhores modelos,
 escolhendo o modelo mais estável. E com isso, finalmente foi realizada a
 reclassificação analisando como a altura varia de acordo com a idade da
@@ -158,7 +158,7 @@ floresta.
 
 ### Prognose e rotação técnica de corte
 
-  Para estimar a produção do volume, foi realizada a prognose e rotação
+\  Para estimar a produção do volume, foi realizada a prognose e rotação
 nas diferentes idades (24, 36, 48, 60, 72, 84, 96, 108, 120 meses) dos
 talhões analisados. Sendo que, foi utilizado o modelo volumétrico de
 Clutter (representado a seguir), do qual foram analisados seus
@@ -176,7 +176,7 @@ A equação acima considera que:
 
 -   $ab$ = área basal (m³/ha).
 
-  Então, a partir das estimativas de área basal foram calculados o
+\  Então, a partir das estimativas de área basal foram calculados o
 Incremento Corrente Anual (ICA) e o Incremento Médio Anual (IMA) para os
 talhões analisados, de acordo com as fórmulas apresentadas abaixo.
 
@@ -192,7 +192,7 @@ $Id$ = idade n.
 
 ### Análise econômica
 
-  Com o intuito de determinar a idade ótima de corte foi realizada uma
+\  Com o intuito de determinar a idade ótima de corte foi realizada uma
 análise econômica, considerando que os anos e custos das operações foram
 anexados neste documento, para facilitar a visualização das premissas
 usadas. Logo, a partir desses dados, foi gerada uma planilha de fluxo de
@@ -203,7 +203,7 @@ Valor Presente Líquido (VPL), Valor Presente Líquido Infinito (VPL inf),
 Custo Médio da Produção (CMPr), Relação Benefício Custo (B/C), Valor
 Esperado da Terra (VET) e a Taxa Interna de Retorno (TIR).
 
-  A análise econômica foi realizada de forma principal através do VPL,
+\  A análise econômica foi realizada de forma principal através do VPL,
 considerando um horizonte infinito (VPL infinito), pois dessa maneira é
 possível comparar projetos com durações diferentes. Dessa forma os
 projetos foram avaliados. Algumas das fórmulas estão apresentadas
@@ -243,15 +243,15 @@ $j$ = período em que os custos ou receitas ocorrem;
 
 $n$ = duração do projeto.
 
- 
+\ 
 
-  Esses valores gerados serão devidamente comentados posteriormente
+\  Esses valores gerados serão devidamente comentados posteriormente
 neste relatório, de acordo com as interpretações geradas e suas
 motivações.
 
 ### Análise de sensibilidade
 
-  Portanto, com a análise econômica florestal realizada, foram
+\  Portanto, com a análise econômica florestal realizada, foram
 especulados cenários existentes e suas respectivas alterações em valores
 como o custo da terra, custos de venda da madeira e custos atrelados ao
 transporte da madeira.
@@ -421,7 +421,7 @@ estatística** os modelos de Bailey-Clutter polimórfico e Chapman-Richards poli
 : Coeficientes e erro padrão residual obtidos com o ajuste dos modelos.
 
 
-\ Dessa forma, o modelo de Chapman-Richards foi o modelo escolhido, pois além do seu desempenho através da métrica citada anteriormente ter sido o superior, esse foi o modelo que apresentou a melhor distribuição de resíduos devido os resultados estarem mais agrupados em torno do zero (Figura 1), quando comparado com as distribuições dos demais modelos testados a um nível de significância de 5% (anexo).
+\  Dessa forma, o modelo de Chapman-Richards foi o modelo escolhido, pois além do seu desempenho através da métrica citada anteriormente ter sido o superior, esse foi o modelo que apresentou a melhor distribuição de resíduos devido os resultados estarem mais agrupados em torno do zero (Figura 1), quando comparado com as distribuições dos demais modelos testados a um nível de significância de 5%, os quais estão anexados neste documento.
 
 
 ```{r, echo=FALSE, include = FALSE}
@@ -503,7 +503,7 @@ bcnorm_poli <- ggplot( data = dados, mapping = aes( sample = resbcpoli ) ) +
   geom_qq_band( bandType = "pointwise", mapping = aes( fill = "Normal" ), alpha = 0.5 ) +
   geom_qq_band( bandType = "boot", mapping = aes( fill = "Bootstrap" ), alpha = 0.5 ) +
   stat_qq_line( ) +
-  stat_qq_point( ) +
+  stat_qq_point( size = 0.4 ) +
   labs( title = "Bailey-Clutter Polimórfico",
         x = "", 
         y = "" ) +
@@ -514,7 +514,7 @@ bcnorm_ana <- ggplot( data = dados, mapping = aes( sample = resbcana ) ) +
   geom_qq_band( bandType = "boot", mapping = aes( fill = "Bootstrap" ), alpha = 0.5 ) +
   geom_qq_band( bandType = "pointwise", mapping = aes( fill = "Normal" ), alpha = 0.5 ) +
   stat_qq_line( ) +
-  stat_qq_point( ) +
+  stat_qq_point( size = 0.4 ) +
   labs( title = "Bailey-Clutter Anamórfico",
         x = "", 
         y = "Quantil amostral" ) +
@@ -527,10 +527,10 @@ crnorm_poli <- ggplot( data = dados, mapping = aes( sample = rescrpoli ) ) +
   geom_qq_band( bandType = "boot", mapping = aes( fill = "Bootstrap" ), alpha = 0.5 ) +
   geom_qq_band( bandType = "pointwise", mapping = aes( fill = "Pointwise" ), alpha = 0.5 ) +
   stat_qq_line( ) +
-  stat_qq_point( ) +
+  stat_qq_point( size = 0.7 ) +
   labs( title = "Chapman-Richards Polimórfico",
         x = "Quantis Normais", 
-        y = "Quantis de Amostra" ) +
+        y = "Quantil Amostral" ) +
   scale_fill_discrete( "Faixas de Confiança" ) +
   theme_chesTree
 
@@ -538,7 +538,7 @@ crnorm_ana <- ggplot( data = dados, mapping = aes( sample = rescrana ) ) +
   geom_qq_band( bandType = "boot", mapping = aes( fill = "Bootstrap" ), alpha = 0.5 ) +
   geom_qq_band( bandType = "pointwise", mapping = aes( fill = "Normal" ), alpha = 0.5 ) +
   stat_qq_line( ) +
-  stat_qq_point( ) +
+  stat_qq_point( size = 0.4 ) +
   labs( title = "Chapman-Richards Anamórfico",
         x = "Quantis Normais", 
         y = "" ) +
@@ -549,7 +549,7 @@ scnorm_poli <- ggplot( data = dados, mapping = aes( sample = resschpoli ) ) +
   geom_qq_band( bandType = "boot", mapping = aes( fill = "Bootstrap" ), alpha = 0.5 ) +
   geom_qq_band( bandType = "pointwise", mapping = aes( fill = "Normal" ), alpha = 0.5 ) +
   stat_qq_line( ) +
-  stat_qq_point( ) +
+  stat_qq_point( size = 0.4 ) +
   labs( title = "Shcumacher Polimórfico",
         x = "Quantis Normais", 
         y = "Quantil amostral" ) +
@@ -560,7 +560,7 @@ scnorm_ana <- ggplot( data = dados, mapping = aes( sample = resschana ) ) +
   geom_qq_band( bandType = "boot", mapping = aes( fill = "Bootstrap" ), alpha = 0.5 ) +
   geom_qq_band( bandType = "pointwise", mapping = aes( fill = "Normal" ), alpha = 0.5 ) +
   stat_qq_line( ) +
-  stat_qq_point( ) +
+  stat_qq_point( size = 0.4 ) +
   labs( title = "Schumacher Anamórfico",
         x = "Quantis Normais", 
         y = "" ) +
@@ -682,7 +682,10 @@ res_norm_plot
 
 ```
 
-\  Ademais, também na Figura 1, é possível observar que o gráfico de qunatis gerou faixas de confiança simultâneas com base na distribuição normal, técnica conhecida como _Pointwise_; faixas de confiança pontuais com base em um bootstrap paramétrico; bandas de confiança simultâneas com base em uma inversão do teste de Kolmogorov-Smirnov (KS) e faixas de confiança sensíveis à cauda, como proposto por [@aldor2013power]. E a reta estimada estava contida dentro desses intervalos, para todas as técnicas citadas, afirmando normalidade.
+\  Ademais, também na Figura 1, é foram geradas faixas de confiança simultâneas com base na distribuição normal, técnica conhecida como _Pointwise_; faixas de confiança pontuais com base em um bootstrap paramétrico; bandas de confiança simultâneas com base em uma inversão do teste de Kolmogorov-Smirnov (KS) e faixas de confiança sensíveis à cauda, como proposto por [@aldor2013power]. E a reta estimada estava contida dentro desses intervalos, para todas as técnicas citadas, afirmando normalidade.
+
+\  Outrossim, com o intuito de comparar as estabilidades entre parcelas dos modelos, foram destacadas a quantidade de mudanças de classe observadas. 
+
 
 
 ### Prognose e idade ótima de corte
