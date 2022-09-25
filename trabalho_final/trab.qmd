@@ -27,7 +27,7 @@ editor_options:
 
 \newpage
 
-## Apresentação
+# Apresentação
 
   A chesTree é uma empresa de consultoria e serviços florestais,
 especializada nos processos que envolvem medições e realizações de
@@ -35,7 +35,7 @@ inventários. A chesTree conta com profissionais qualificados e renomados
 do mercado, atuando na área florestal desde 1990. A sede da empresa está
 localizada em São Paulo, mas conta com filiais espalhadas por todo país.
 
-## Introdução
+# Introdução
 
   Um inventário florestal é uma prática que busca a quantificação, e por
 conseguinte, a qualificação das florestas em diferentes aspectos, como a
@@ -74,7 +74,7 @@ do que proporcionais, seguida de uma fase com ganhos decrescentes
 unidade de área é um fator imprescindível para uma empresa florestal, o
 qual é perceptível através desse parâmetro.
 
-## Objetivo
+# Objetivo
 
   O presente relatório tem como objetivo utilizar dados de um inventario
 florestal contínuo de plantios clonais de *Eucalyptus* sp. no estado de
@@ -87,9 +87,9 @@ São Paulo para:
 -   definir qual a fazenda mais lucrativa dentro das condições
     existentes para possível implantação da floresta.
 
-## Metodologia
+# Metodologia
 
-### Coleta de dados e classificação de sítios
+## Coleta de dados e classificação de sítios
 
   Inicialmente, os primeiros aspectos da área foram fornecidos pelo
 proprietário da área e foram analisadas presencialmente na fazenda, e
@@ -156,7 +156,11 @@ escolhendo o modelo mais estável. E com isso, finalmente foi realizada a
 reclassificação analisando como a altura varia de acordo com a idade da
 floresta.
 
-### Prognose e rotação técnica de corte
+ Desse modo, depois da reclassificação foram escolhidos três talhões (1
+sítio representando cada talhão), os quais apresentavam relação com a
+distância, ou seja, quanto melhor o sítio mais distante o talhão.
+
+## Prognose e rotação técnica de corte
 
   Para estimar a produção do volume, foi realizada a prognose e rotação
 nas diferentes idades (24, 36, 48, 60, 72, 84, 96, 108, 120 meses) dos
@@ -190,7 +194,7 @@ $V_{Id}$ = volume na idade n;
 
 $Id$ = idade n.
 
-### Análise econômica
+## Análise econômica
 
   Com o intuito de determinar a idade ótima de corte foi realizada uma
 análise econômica, considerando que os anos e custos das operações foram
@@ -249,14 +253,14 @@ $n$ = duração do projeto.
 neste relatório, de acordo com as interpretações geradas e suas
 motivações.
 
-### Análise de sensibilidade
+## Análise de sensibilidade
 
   Portanto, com a análise econômica florestal realizada, foram
 especulados cenários existentes e suas respectivas alterações em valores
 como o custo da terra, custos de venda da madeira e custos atrelados ao
 transporte da madeira.
 
-## Resultados e discussão
+# Resultados e discussão
 
 ```{r setup, include=FALSE, echo = FALSE}
 library( cmrinvflor )
@@ -265,6 +269,7 @@ library( magick )
 library( cowplot )
 library( gridExtra )
 library( qqplotr )
+library( png )
 
 dados_npar <- read.csv2( "ifc.csv" )
 names( dados_npar )
@@ -273,10 +278,10 @@ dados_npar <- dados_npar[ c( "parcela", "idade", "hdom", "ab", "vtsc", "vtcc" ) 
 dados <- cmrinvflor::parear_seqmed( dados_npar )
 ```
 
-### Estatísticas dos modelos e classes de sítio
+## Estatísticas dos modelos e classes de sítio
 
 ```{r}
-### Ajustes dos modelos de classificação de sítios 
+## Ajustes dos modelos de classificação de sítios 
 
 # Ajustes Bailey Clutter --------------------------------------------------
 
@@ -431,7 +436,7 @@ considerando os fatores biológicos que afetam as florestas.
 # gráfico de sítios
 # Avaliação de estabilidade dos modelos Bailey & Clutter Polimórfico e Chapman & Richards Polimórfico.
 
-### Análise gráfica dos #ajustes
+## Análise gráfica dos #ajustes
 
 img <- image_read( "chestreelogo.PNG" )
 
@@ -587,7 +592,7 @@ norm_plot_anexos <- ggdraw( ) +
   draw_image( img, x = 0.66, y = 0.02, width = 0.35, height = 0.65 )  
 
 
-### Resíduos
+## Resíduos
 
 res_plot_bcpoli <- ggplot( dados, aes( x = idade1, y = resbcpoli, color = "lightgreen" ) ) +
   geom_point( size = 0.9 , alpha = 0.5 ) +
@@ -704,9 +709,13 @@ contida dentro desses intervalos, para todas as técnicas citadas,
 afirmando normalidade.
 
   Outrossim, com o intuito de comparar as estabilidades entre parcelas
-dos modelos, foi processada a classificação de sítio. Com isso, foi possível gerar comparações como as destacadas na frequência das mudanças de
-classe observadas na Tabela 2, a qual apresenta a comparação entre os dois melhores modelos. Sendo que, essa mesma análise para os demais modelos
-está disponível em anexo deste documento, assim como os gráficos das curvas de índice de sítio das alturas dominantes, distribuídas em intervalos de classes, em função do tempo para cada modelo.
+dos modelos, foi processada a classificação de sítio. Com isso, foi
+possível gerar comparações como as destacadas na frequência das mudanças
+de classe observadas na Tabela 2, a qual apresenta a comparação entre os
+dois melhores modelos. Sendo que, essa mesma análise para os demais
+modelos está disponível em anexo deste documento, assim como os gráficos
+das curvas de índice de sítio das alturas dominantes, distribuídas em
+intervalos de classes, em função do tempo para cada modelo.
 
 | Modelos                        | Migração de classes | Ocorrências | Porcentagem |
 |--------------------------------|---------------------|-------------|-------------|
@@ -720,32 +729,458 @@ está disponível em anexo deste documento, assim como os gráficos das curvas d
 
 : Teste de estabilidade das parcelas para os melhores modelos testados.
 
-\  O modelo Chapman-Richards Polimórfico apesar de estar um pouco abaixo da estabilidade observada no modelo de Bailey-Clutter, os dados apresentam pouca diferança, e por conta da sua superioridade nos demais quesitos observados, o modelo escolhido foi o de Chapman-Richards polimórfico.
+  O modelo Chapman-Richards Polimórfico apesar de estar um pouco abaixo
+da estabilidade observada no modelo de Bailey-Clutter, os dados
+apresentam pouca diferança, e por conta da sua superioridade nos demais
+quesitos observados, o modelo escolhido foi o de Chapman-Richards
+polimórfico.
+
+![Distribuição das alturas dominantes em função da idade para modelo
+Chapman-Richards Polimórfico e seus respectivos
+limites.](curva_indice_sitio_cr_polimorfico.jpeg){width="70%"}
+
+## Prognose e idade ótima de corte
+
+```{r}
+#Ajuste do modelo de Clutter
+ifc <- read.csv2( "ifc.csv" )
+ifc <- ifc[ c( "parcela","idade","ab", "vtcc", "vtsc", "s" ) ] 
+
+ifcp <- parear_seqmed( ifc )
+
+names( ifcp ) <- v_from_to( names( ifcp ), "s1", "s" )
+
+ifcp$s2 <- NULL
+
+aj <- lm( "log(vtcc2)~I(1/s)+I(1/idade2)+
+           I((idade1/idade2)*log(ab1))+
+           I(1-idade1/idade2)+I((1-idade1/idade2)*s)",
+           ifcp )
+
+sumario <- summary( aj )
+
+# coeficiente de determinação
+R2 <- round( sumario$r.squared * 100, 2 )
+
+# erro padrão residual m³
+syx_log <- sumario$sigma
+
+dvtcc2 <- 1 / ifcp$vtcc2
+
+medgeo <- exp( mean( log( dvtcc2 ) ) )
+
+ifurnival <- round( 1 / medgeo * sumario$sigma, 2 )
+ifurnival_perc <- round( ifurnival /mean( ifcp$vtcc2 ) * 100, 2 )
+
+#Fator de correção da discrepância logaritmica
+#de Meyer
+fc <- exp( 0.5 * sumario$sigma ^ 2 )
+vtcc_est <- exp( predict( aj ) ) * fc
+
+bs <- coef( aj )
+
+#pegar a ultima medição de cada parcela
+ultmed <- aggregate( list( max_id = ifc$idade ),
+                     list( parcela = ifc$parcela ),
+                     max )
+
+ifc <- merge( ifc, ultmed )
+
+ifc_ultmed <- subset( ifc, idade == max_id )
+
+#Estimar os volumes nas diferentes idades
+idadeprog <- 24;      #(24 meses=2anos)
+
+#bs ? valores de betas, guardou-os na posição 1,2,.. pq no R a matriz come?a na posi??o 1! igual no excel, s? q n?o devia.
+ifc_ultmed$vtcc2 <- with(ifc_ultmed, exp(bs[1]+bs[2]/s+bs[3]/idadeprog+bs[4]*(idade/idadeprog)*log(ab)+bs[5]*(1-idade/idadeprog)+bs[6]*(1-idade/idadeprog)*s))
+
+idadeprog <- 36
+ifc_ultmed$vtcc3 <- with(ifc_ultmed, exp(bs[1]+bs[2]/s+bs[3]/idadeprog+bs[4]*(idade/idadeprog)*log(ab)+bs[5]*(1-idade/idadeprog)+bs[6]*(1-idade/idadeprog)*s));
+
+idadeprog <- 48
+ifc_ultmed$vtcc4 <- with(ifc_ultmed, exp(bs[1]+bs[2]/s+bs[3]/idadeprog+bs[4]*(idade/idadeprog)*log(ab)+bs[5]*(1-idade/idadeprog)+bs[6]*(1-idade/idadeprog)*s));
+
+idadeprog <- 60
+ifc_ultmed$vtcc5 <- with(ifc_ultmed, exp(bs[1]+bs[2]/s+bs[3]/idadeprog+bs[4]*(idade/idadeprog)*log(ab)+bs[5]*(1-idade/idadeprog)+bs[6]*(1-idade/idadeprog)*s));
+
+idadeprog <- 72
+ifc_ultmed$vtcc6 <- with(ifc_ultmed, exp(bs[1]+bs[2]/s+bs[3]/idadeprog+bs[4]*(idade/idadeprog)*log(ab)+bs[5]*(1-idade/idadeprog)+bs[6]*(1-idade/idadeprog)*s));
+
+idadeprog <- 84
+ifc_ultmed$vtcc7 <- with(ifc_ultmed, exp(bs[1]+bs[2]/s+bs[3]/idadeprog+bs[4]*(idade/idadeprog)*log(ab)+bs[5]*(1-idade/idadeprog)+bs[6]*(1-idade/idadeprog)*s));
+
+idadeprog <- 96
+ifc_ultmed$vtcc8 <- with(ifc_ultmed, exp(bs[1]+bs[2]/s+bs[3]/idadeprog+bs[4]*(idade/idadeprog)*log(ab)+bs[5]*(1-idade/idadeprog)+bs[6]*(1-idade/idadeprog)*s));
+
+idadeprog <- 108
+ifc_ultmed$vtcc9 <- with(ifc_ultmed, exp(bs[1]+bs[2]/s+bs[3]/idadeprog+bs[4]*(idade/idadeprog)*log(ab)+bs[5]*(1-idade/idadeprog)+bs[6]*(1-idade/idadeprog)*s));
+
+idadeprog <- 120
+ifc_ultmed$vtcc10 <- with(ifc_ultmed, exp(bs[1]+bs[2]/s+bs[3]/idadeprog+bs[4]*(idade/idadeprog)*log(ab)+bs[5]*(1-idade/idadeprog)+bs[6]*(1-idade/idadeprog)*s));
+
+#Calcular os IMAs
+ifc_ultmed$ima2 <- ifc_ultmed$vtcc2 / 2
+ifc_ultmed$ima3 <- ifc_ultmed$vtcc3 / 3
+ifc_ultmed$ima4 <- ifc_ultmed$vtcc4 / 4
+ifc_ultmed$ima5 <- ifc_ultmed$vtcc5 / 5
+ifc_ultmed$ima6 <- ifc_ultmed$vtcc6 / 6
+ifc_ultmed$ima7 <- ifc_ultmed$vtcc7 / 7
+ifc_ultmed$ima8 <- ifc_ultmed$vtcc8 / 8
+ifc_ultmed$ima9 <- ifc_ultmed$vtcc9 / 9
+ifc_ultmed$ima10 <- ifc_ultmed$vtcc10 / 10
+
+#Calcular ICAs
+ifc_ultmed$ica3 <- with( ifc_ultmed, vtcc3 - vtcc2 )
+ifc_ultmed$ica4 <- with( ifc_ultmed, vtcc4 - vtcc3 )
+ifc_ultmed$ica5 <- with( ifc_ultmed, vtcc5 - vtcc4 )
+ifc_ultmed$ica6 <- with( ifc_ultmed, vtcc6 - vtcc5 )
+ifc_ultmed$ica7 <- with( ifc_ultmed, vtcc7 - vtcc6 )
+ifc_ultmed$ica8 <- with( ifc_ultmed, vtcc8 - vtcc7 )
+ifc_ultmed$ica9 <- with( ifc_ultmed, vtcc9 - vtcc8 )
+ifc_ultmed$ica10 <- with( ifc_ultmed, vtcc10 - vtcc9 )
+
+#write.csv2( ifc_ultmed, "prognosecerto.csv", row.names = F )
+
+```
+
+  Portanto, com a reclassificação dos sítios, foram selecionadas as três
+fazendas: Júlio de Mesquita, Santa Bárbara e Montreal. As quais tiveram
+seus principais dados explicitados na Tabela 3.
+
+| Fazenda           | Talhão | Parcela | Idade (meses) | Área basal (cm²) | Sítio | Distância (km) |
+|-------------------|--------|---------|---------------|------------------|-------|----------------|
+| Montreal          | 7      | 15      | 75            | 26.58            | 23.4  | 86.22          |
+| Santa Bárbara     | 41     | 71      | 61.86         | 30.15            | 28    | 114.97         |
+| Júlio de Mesquita | 103    | 196     | 75.76         | 31.83            | 30.3  | 152.06         |
+
+: Informações das fazendas em relação às distâncias para a fábrica
+contratante.
+
+ Para o cálculo das estimativas de volume, foi usado o modelo de
+Clutter, o qual gerou os parâmetros demonstrados na Tabela 4, sendo
+posteriormente avaliado pelas métricas dispostas na Tabela 5, as quais
+apresentaram uma boa confiabilidade, considerando que 95.26% das
+variações da variável dependente são explicadas pelas variações das
+variáveis independentes. Além disso, também foi realizada a análise gráfica deste modelo, a qual foi
+dentro do esperado em relação à variância, afirmando normalidade para os diferentes intervalos estatísticos testados (Figura 3).
+
+|        | $\beta_0$   | $\beta_1$  | $\beta_2$  | $\beta_3$   | $\beta_4$   | $\beta_5$   |
+|--------|-------------|------------|------------|-------------|-------------|-------------|
+| Coefs. | 2.673020758 | -19.572384 | -18.535522 | 1.223599895 | 4.424411929 | 0.009277004 |
+
+: Parâmetros do modelo volumétrico de Clutter.
+
+| Modelo  | Erro padrão residual (m³) | R² (%) | Índice de Furnival (%) |
+|---------|---------------------------|--------|------------------------|
+| Clutter | `r syx_log`               | `r R2` | `r ifurnival_perc`     |
+
+: Estatísticas do modelo de Clutter.
 
 
-![Distribuição das alturas dominantes em função da idade para modelo Chapman-Richards Polimórfico e seus respectivos limites.](curva_indice_sitio_cr_polimorfico.jpeg){width=70%}
+```{r}
+#| fig-cap: Gráfico quantil-quantil e gráfico da distribuição de resíduos do modelo de Clutter.
 
-### Prognose e idade ótima de corte
+ifcp$resclutter <- residuals( aj ) #polimórfico
 
-### Análise econômica
+resclutter <- ggplot( data = ifcp, mapping = aes( sample = resclutter ) ) +
+  geom_qq_band( bandType = "ks", mapping = aes( fill = "KS" ), alpha = 0.5 ) +
+  geom_qq_band( bandType = "ts", mapping = aes( fill = "TS" ), alpha = 0.5 ) +
+  geom_qq_band( bandType = "boot", mapping = aes( fill = "Bootstrap" ), alpha = 0.5 ) +
+  geom_qq_band( bandType = "pointwise", mapping = aes( fill = "Pointwise" ), alpha = 0.5 ) +
+  stat_qq_line( ) +
+  stat_qq_point( size = 0.7 ) +
+  labs( title = "Clutter",
+        x = "Quantis Normais", 
+        y = "Quantil Amostral" ) +
+  scale_fill_discrete( "Faixas de Confiança" ) +
+  theme_chesTree
 
-### Sensibilidade econômica
+res_plot_clutter <- ggplot( ifcp, aes( x = idade1, y = resclutter, color = "lightgreen" ) ) +
+  geom_point( size = 1.5 , alpha = 0.5 ) +
+  labs( title = "" ) +
+  geom_hline( yintercept = 0, col = "black" ) +
+  geom_smooth( se = TRUE, method = "loess", formula = "y ~ x" ) +
+  scale_y_continuous( limits = c( -1, 1 ), breaks = c( 1, -0.5, 0, 0.5, 1  ), name = "Resíduos (m)" ) +
+  scale_x_continuous( name = "Idade (meses)" ) +
+  scale_color_manual( values = c( "#50B23D","#0072B2" ), guide = "none" ) +
+  scale_fill_manual( values = c( "#E69F00","#0072B2" ), guide = "none" ) +
+  theme_chesTree
 
-## Conclusão
+arranged_res_norm_clutter <- grid.arrange( resclutter, res_plot_clutter, ncol = 2 )
 
-## 7 Referências {.unnumbered}
+res_norm_plot <- ggdraw( ) +
+  draw_plot( arranged_res_norm_clutter, x = 0, y = 0.15, width = 1, height = 0.85 ) +
+  draw_image( img, x = 0.35, y = 0.02, width = 0.35, height = 0.2 )  
+```
+
+
+
+
+```{r}
+#| fig-cap: Curva de Crescimento e Curvas de IMA e ICA com Idade Ótima de Corte destacado em ambos gráficos da Fazenda Montreal.
+
+#Dados da última medição parcela 7
+#Idade presente (meses)
+idade1 <- 75
+#Área basal presente (m²/ha)
+ab1 <- 26.58
+#Sítio 23,4 (metros)
+s <- 23.4
+
+#Aplicação do modelo de Clutter
+
+b0 <- bs[ 1 ] 
+b1 <- bs[ 2 ] 
+b2 <- bs[ 3 ]
+b3 <- bs[ 4 ]   
+b4 <- bs[ 5 ]   
+b5 <- bs[ 6 ]
+#' estimar a curva de produção (senóide)
+eqvol <- expression( exp( b0 + b1 / s + b2 / x + b3 * ( idade1 / x ) * log( ab1 ) +
+                            b4 * ( 1 - idade1 / x ) + b5 * ( 1 - idade1 / x ) * s ) 
+)
+#' gerando incremento
+
+#D( eqvol, "x" )
+der_eqvol <-  expression( exp(b0 + b1/s + b2/x + b3 * (idade1/x) * log(ab1) + 
+                                b4 * (1 - idade1/x) +
+                                b5 * (1 - idade1/x) * s) * (b4 * (idade1/x^2) - 
+                                                              (b3 * (idade1/x^2) * log(ab1) + b2/x^2) + b5 * (idade1/x^2) * 
+                                                              s)
+)
+
+vtcc <- function( x ) eval( eqvol )
+
+#' incremento corrente médio
+icm <- function( x ) eval( der_eqvol )
+
+#' incremento médio mensal
+imn <- function( x ) vtcc( x ) / x
+
+#' Definição da idade ótima de corte silvicultural
+
+# Opção 1
+
+op <- optimise( f = imn, interval = c( 12, 120 ), maximum = TRUE )
+iocs <- op$maximum / 12
+
+#' Opção 2
+fo <- function( x ) abs( icm( x ) - imn( x ) )
+op <- optimise( f = fo, interval = c( 12, 120 ), maximum = FALSE )
+iocs <- op$minimum / 12
+
+my_image <- readPNG( "chestreelogo.PNG" )
+
+#' Adicionando idade ótima de corte no gráfico
+lim <- par( mfrow = c( 2, 1 ),
+            pch = 20,
+            bty = "l",
+            mai = c( 0.8, 0.9, 0.1, 0.4 ) )
+
+curve( vtcc( x ), 12, 120, xlab = "", ylab = "vtcc (m³/ha)" )
+curve( icm( x )* 12, 12, 120, xlab = "idade (meses)", ylab = "icm (m³/ha.ano)", col = "red" )
+curve( imn( x )* 12, 12, 120, xlab = "idade (meses)", ylab = "ima (m³/ha.ano)", add = TRUE, col = "green" )
+legend( "topright", c( "ICA", "IMA" ), text.col = c( "red", "green" ), box.lty = 0,
+        col = c( "red", "green" ), lty = c( 1, 1 ) )
+par( xpd = NA )
+abline( v = iocs * 12, col = "black", lty = 2 )
+
+rasterImage( my_image, 
+             xleft = 90, xright = 124, 
+             ybottom = 70, ytop = 85 )
+
+text( 65, 60, paste( round( iocs, 2 ), " anos" ), cex = 0.8 )
+
+
+```
+
+```{r}
+#| fig-cap: Curva de Crescimento e Curvas de IMA e ICA com Idade Ótima de Corte destacado em ambos gráficos da Fazenda Santa Bárbara.
+
+# -- Fazenda 
+# id1 para talhao 41 é = 61,86
+# ab1 para talhao 41  é = 30,15
+# s para talhao 41 é = 28
+
+
+#Dados da última medição parcela 110
+#Idade presente (meses)
+idade1 <- 61.86
+#Área basal presente (m²/ha)
+ab1 <- 30.15
+#Sítio 28 (metros)
+s <- 28
+
+
+#Aplicação do modelo de Clutter
+
+b0 <- bs[ 1 ] 
+b1 <- bs[ 2 ] 
+b2 <- bs[ 3 ]
+b3 <- bs[ 4 ]   
+b4 <- bs[ 5 ]   
+b5 <- bs[ 6 ]
+#' estimar a curva de produção (senóide)
+eqvol <- expression( exp( b0 + b1 / s + b2 / x + b3 * ( idade1 / x ) * log( ab1 ) +
+                            b4 * ( 1 - idade1 / x ) + b5 * ( 1 - idade1 / x ) * s ) 
+)
+#' gerando incremento
+
+#D( eqvol, "x" )
+der_eqvol <-  expression( exp(b0 + b1/s + b2/x + b3 * (idade1/x) * log(ab1) + 
+                                b4 * (1 - idade1/x) +
+                                b5 * (1 - idade1/x) * s) * (b4 * (idade1/x^2) - 
+                                                              (b3 * (idade1/x^2) * log(ab1) + b2/x^2) + b5 * (idade1/x^2) * 
+                                                              s)
+)
+
+vtcc <- function( x ) eval( eqvol )
+
+#' incremento corrente médio
+icm <- function( x ) eval( der_eqvol )
+
+#' incremento médio mensal
+imn <- function( x ) vtcc( x ) / x
+
+#' Definição da idade ótima de corte silvicultural
+
+# Opção 1
+
+op <- optimise( f = imn, interval = c( 12, 120 ), maximum = TRUE )
+iocs <- op$maximum / 12
+
+#' Opção 2
+fo <- function( x ) abs( icm( x ) - imn( x ) )
+op <- optimise( f = fo, interval = c( 12, 120 ), maximum = FALSE )
+iocs <- op$minimum / 12
+
+my_image <- readPNG( "chestreelogo.PNG" )
+
+#' Adicionando idade ótima de corte no gráfico
+lim <- par( mfrow = c( 2, 1 ),
+            pch = 20,
+            bty = "l",
+            mai = c( 0.8, 0.9, 0.1, 0.4 ) )
+
+curve( vtcc( x ), 12, 120, xlab = "", ylab = "vtcc (m³/ha)" )
+curve( icm( x )* 12, 12, 120, xlab = "idade (meses)", ylab = "icm (m³/ha.ano)", col = "red" )
+curve( imn( x )* 12, 12, 120, xlab = "idade (meses)", ylab = "ima (m³/ha.ano)", add = TRUE, col = "green" )
+legend( "topright", c( "ICA", "IMA" ), text.col = c( "red", "green" ), box.lty = 0,
+        col = c( "red", "green" ), lty = c( 1, 1 ) )
+par( xpd = NA )
+abline( v = iocs * 12, col = "black", lty = 2 )
+
+rasterImage( my_image, 
+             xleft = 90, xright = 130, 
+             ybottom = 105, ytop = 130 )
+
+text( 60, 90, paste( round( iocs, 2 ), " anos" ), cex = 0.8 )
+
+```
+
+```{r}
+#| fig-cap: Curva de Crescimento e Curvas de IMA e ICA com Idade Ótima de Corte destacado em ambos gráficos da Fazenda Júlio de Mesquita.
+
+# -- Fazenda 
+# id1 para talhao 103 é = 75,76
+# ab1 para talhao 103 é = 31,83
+# s para talhao 103 é = 30,3
+
+#Dados da última medição parcela 89
+#Idade presente (meses)
+idade1 <- 75.76
+#Área basal presente (m²/ha)
+ab1 <- 31.83
+#Sítio 30,3 (metros)
+s <- 30.3
+
+#Aplicação do modelo de Clutter
+
+b0 <- bs[ 1 ] 
+b1 <- bs[ 2 ] 
+b2 <- bs[ 3 ]
+b3 <- bs[ 4 ]   
+b4 <- bs[ 5 ]   
+b5 <- bs[ 6 ]
+#' estimar a curva de produção (senóide)
+eqvol <- expression( exp( b0 + b1 / s + b2 / x + b3 * ( idade1 / x ) * log( ab1 ) +
+                            b4 * ( 1 - idade1 / x ) + b5 * ( 1 - idade1 / x ) * s ) 
+)
+#' gerando incremento
+
+#D( eqvol, "x" )
+der_eqvol <-  expression( exp(b0 + b1/s + b2/x + b3 * (idade1/x) * log(ab1) + 
+                                b4 * (1 - idade1/x) +
+                                b5 * (1 - idade1/x) * s) * (b4 * (idade1/x^2) - 
+                                                              (b3 * (idade1/x^2) * log(ab1) + b2/x^2) + b5 * (idade1/x^2) * 
+                                                              s)
+)
+
+vtcc <- function( x ) eval( eqvol )
+
+#' incremento corrente médio
+icm <- function( x ) eval( der_eqvol )
+
+#' incremento médio mensal
+imn <- function( x ) vtcc( x ) / x
+
+#' Definição da idade ótima de corte silvicultural
+
+# Opção 1
+
+op <- optimise( f = imn, interval = c( 12, 120 ), maximum = TRUE )
+iocs <- op$maximum / 12
+
+#' Opção 2
+fo <- function( x ) abs( icm( x ) - imn( x ) )
+op <- optimise( f = fo, interval = c( 12, 120 ), maximum = FALSE )
+iocs <- op$minimum / 12
+
+my_image <- readPNG( "chestreelogo.PNG" )
+
+#' Adicionando idade ótima de corte no gráfico
+lim <- par( mfrow = c( 2, 1 ),
+            pch = 20,
+            bty = "l",
+            mai = c( 0.8, 0.9, 0.1, 0.4 ) )
+
+curve( vtcc( x ), 12, 120, xlab = "", ylab = "vtcc (m³/ha)" )
+curve( icm( x )* 12, 12, 120, xlab = "idade (meses)", ylab = "icm (m³/ha.ano)", col = "red" )
+curve( imn( x )* 12, 12, 120, xlab = "idade (meses)", ylab = "ima (m³/ha.ano)", add = TRUE, col = "green" )
+legend( "topright", c( "ICA", "IMA" ), text.col = c( "red", "green" ), box.lty = 0,
+        col = c( "red", "green" ), lty = c( 1, 1 ) )
+par( xpd = NA )
+abline( v = iocs * 12, col = "black", lty = 2 )
+
+rasterImage( my_image, 
+             xleft = 90, xright = 130, 
+             ybottom = 105, ytop = 130 )
+
+text( 65, 100, paste( round( iocs, 2 ), " anos" ), cex = 0.8 )
+
+```
+
+\  A partir das Figuras 4, 5 e 6, torna-se perceptível as diferenças na idade técnica de corte (período de maior Incremento Médio Anual) para cada fazenda, considerando a relação inversa com a qualidade do sítio, de acordo com o que se espera na teoria, quanto melhor o sítio maior o IMA (Incremento Médio Anual), logo, mais rápido as plantas atingirão a idade ótima para corte (IOC/ITC). No entanto, a fazenda Santa Bárbara, a qual está contida no sítio 28, apresentou uma IOC mais curta do que a fazenda Júlio de Mesquita, a qual está contida no sítio 30.3. Ou seja, é possível inferir que devido às condições menos favoráveis existentes na fazenda Santa Bárbara, não vale a pena manter a floresta em pé, devido a sua permanência no campo não representar um maior desenvolvimento.
+
+
+# Análise econômica
+
+## Sensibilidade econômica
+
+# Conclusão
+
+\newpage
+
+# Referências {.unnumbered}
 
 ::: {#refs}
 :::
 
-\  
+\newpage
 
-\  
+**Anexos**
 
-__Anexos__
-
-\ 
-
+ 
 
 ```{r}
 #| fig-cap: Gráficos da distribuição de resíduos dos modelos que não foram selecionados.
@@ -776,7 +1211,5 @@ norm_plot_anexos
 |                              | 0                   | 70          | 30.84       |
 | Bailey-Clutter (polimórfico) | 1                   | 140         | 61.67       |
 |                              | 2                   | 17          | 7.49        |
+
 : Teste de estabilidade das parcelas para os modelos não selecionados
-
-
-![Distribuição das alturas dominantes em função da idade para os modelos testados e seus respectivos limites.]()

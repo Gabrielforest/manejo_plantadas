@@ -47,6 +47,7 @@ clscrpoli <- class_sitio_dif_alg( amostras = ifc,
                                   iref = 72,
                                   graf_curvas = T )
 
+write.csv2( clscrpoli$amostras, "trabalho_final/crpoli_sitios.csv" )
 clscrpoli_estabilidade <- clscrpoli$estabilidade
 clscrpoli_estabilidade$modelo <- "Chapman-Richards polimórfico"
 
