@@ -29,144 +29,67 @@ editor_options:
 
 # Apresentação
 
-  A chesTree é uma empresa de consultoria e serviços florestais,
-especializada nos processos que envolvem medições e realizações de
-inventários. A chesTree conta com profissionais qualificados e renomados
-do mercado, atuando na área florestal desde 1990. A sede da empresa está
-localizada em São Paulo, mas conta com filiais espalhadas por todo país.
+  A chesTree é uma empresa de consultoria e serviços florestais, especializada nos processos que envolvem medições e realizações de inventários. A chesTree conta com profissionais qualificados e renomados do mercado, atuando na área florestal desde 1990. A sede da empresa está localizada em São Paulo, mas conta com filiais espalhadas por todo país.
 
 # Introdução
 
-  Um inventário florestal é uma prática que busca a quantificação, e por
-conseguinte, a qualificação das florestas em diferentes aspectos, como a
-produção de madeira e outros possíveis produtos, através do uso de
-técnicas estatísticas de amostragem. Considerando que, o inventário visa
-obter o máximo de informações de uma floresta com a máxima precisão e o
-mínimo custo. Esses três fatores desempenham papel importante no
-planejamento de um inventário florestal [@junior2020measure].
+  Um inventário florestal é uma prática que busca a quantificação, e por conseguinte, a qualificação das florestas em diferentes aspectos, como a produção de madeira e outros possíveis produtos, através do uso de técnicas estatísticas de amostragem. Considerando que, o inventário visa obter o máximo de informações de uma floresta com a máxima precisão e o mínimo custo. Esses três fatores desempenham papel importante no planejamento de um inventário florestal [@junior2020measure].
 
-  Sendo assim, o conhecimento dos processos de crescimento e produção de
-um povoamento florestal são indubitavelmente necessários ao
-gerenciamento racional das florestas plantadas
-[@cosenza2015classificaccao]. Logo, as técnicas estatísticas que
-envolvem modelagens tornam-se ferramentas importantes para se obter
-informações relevantes que auxiliem na tomada de decisões durante o
-planejamento florestal, a partir de características encontradas na área
-e sua conseguinte prognose de produção gerada. Afinal, o crescimento e a
-produção de um povoamento florestal dependem de diversos fatores que
-podem ser quantificados e planejados, como a idade, o sítio (potencial
-produtivo), os tratos silviculturais, entre outros.
+  Sendo assim, o conhecimento dos processos de crescimento e produção de um povoamento florestal são indubitavelmente necessários ao gerenciamento racional das florestas plantadas [@cosenza2015classificaccao]. Logo, as técnicas estatísticas que envolvem modelagens tornam-se ferramentas importantes para se obter informações relevantes que auxiliem na tomada de decisões durante o planejamento florestal, a partir de características encontradas na área e sua conseguinte prognose de produção gerada. Afinal, o crescimento e a produção de um povoamento florestal dependem de diversos fatores que podem ser quantificados e planejados, como a idade, o sítio (potencial produtivo), os tratos silviculturais, entre outros.
 
-  Dessa forma, com a intenção de prever o crescimento, são estimadas
-variáveis dendrométricas e classes de produtividade ou sítio. Portanto,
-a determinação de sítio é de suma importância durante todo o sistema de
-prognose e definição das classes de produtividade [@demetodos]. Isso se
-deve ao fato de que há uma amplitude de variação dos fatores biológicos,
-os quais refletem no crescimento das florestas.
+  Dessa forma, com a intenção de prever o crescimento, são estimadas variáveis dendrométricas e classes de produtividade ou sítio. Portanto, a determinação de sítio é de suma importância durante todo o sistema de prognose e definição das classes de produtividade [@demetodos]. Isso se deve ao fato de que há uma amplitude de variação dos fatores biológicos, os quais refletem no crescimento das florestas.
 
-  Desse modo, é possível concluir que através das estimativas citadas
-anteriormente se pode alcançar a máxima eficiência volumétrica, ou seja,
-a idade em que o povoamento atinge ao maximizar o incremento médio anual
-(IMA), pois o mesmo apresenta um único ponto de máximo quando associado
-a curvas de crescimento que apresentam uma fase inicial com ganhos mais
-do que proporcionais, seguida de uma fase com ganhos decrescentes
-[@rodriguez2010tecnicas]. Logo, saber quando ocorrerá o máximo lucro por
-unidade de área é um fator imprescindível para uma empresa florestal, o
-qual é perceptível através desse parâmetro.
+  Desse modo, é possível concluir que através das estimativas citadas anteriormente se pode alcançar a máxima eficiência volumétrica, ou seja, a idade em que o povoamento atinge ao maximizar o incremento médio anual (IMA), pois o mesmo apresenta um único ponto de máximo quando associado a curvas de crescimento que apresentam uma fase inicial com ganhos mais do que proporcionais, seguida de uma fase com ganhos decrescentes [@rodriguez2010tecnicas]. Logo, saber quando ocorrerá o máximo lucro por unidade de área é um fator imprescindível para uma empresa florestal, o qual é perceptível através desse parâmetro.
 
 # Objetivo
 
-  O presente relatório tem como objetivo utilizar dados de um inventario
-florestal contínuo de plantios clonais de *Eucalyptus* sp. no estado de
-São Paulo para:
+  O presente relatório tem como objetivo utilizar dados de um inventario florestal contínuo de plantios clonais de *Eucalyptus* sp. no estado de São Paulo, nas fazendas presentes nos municípios de Buri, Itaberá e Itaí para:
 
 -   classificar os sítios das três fazendas;
 
 -   recomendar a idade ótima de corte;
 
--   definir qual a fazenda mais lucrativa dentro das condições
-    existentes para possível implantação da floresta.
+-   definir qual a fazenda mais lucrativa dentro das condições existentes para possível implantação da floresta.
 
 # Metodologia
 
 ## Coleta de dados e classificação de sítios
 
-  Inicialmente, os primeiros aspectos da área foram fornecidos pelo
-proprietário da área e foram analisadas presencialmente na fazenda, e
-essas informações eram sobre o espaçamento, tipo de solo, relevo,
-presença de patógenos, umidade do solo, entre outras informações gerais.
-Depois desse processo, os dados de diâmetro à altura do peito (DAP)
-foram coletados a 1,3 m do solo, através do uso de uma fita métrica no
-sentido horizontal em relação ao solo. Quando as árvores estavam em
-terreno inclinado, a medição foi realizada no ponto mais elevado e no
-caso das árvores inclinadas a fita métrica foi colocada no sentido
-perpendicular ao eixo do tronco da árvore. A altura total foi medida
-através de um hipsômetro Suunto. As informações adquiridas foram
-armazenadas em tablets, assim como o registro de informações como a
-localização e identificação da área e locais de acesso.
+  Inicialmente, os primeiros aspectos da área foram fornecidos pelo proprietário da área e foram analisadas presencialmente na fazenda, e essas informações eram sobre o espaçamento, tipo de solo, relevo, presença de patógenos, umidade do solo, entre outras informações gerais. Depois desse processo, os dados de diâmetro à altura do peito (DAP) foram coletados a 1,3 m do solo, através do uso de uma fita métrica no sentido horizontal em relação ao solo. Quando as árvores estavam em terreno inclinado, a medição foi realizada no ponto mais elevado e no caso das árvores inclinadas a fita métrica foi colocada no sentido perpendicular ao eixo do tronco da árvore. A altura total foi medida através de um hipsômetro Suunto. As informações adquiridas foram armazenadas em tablets, assim como o registro de informações como a localização e identificação da área e locais de acesso.
 
-  Com isso, o procedimento de amostragem que foi adotado na realização
-do inventário após a análise dos dados foi a amostragem casual simples
-com parcelas circulares. Esse tipo de amostragem é um método utilizado
-em populações homogêneas e foi escolhido, justamente, por conta dessa
-característica do povoamento. Além disso, o procedimento de inventário
-florestal citado anteriormente foi repetido ao longo dos anos, de forma
-contínua, com o objetivo de processar os dados nos softwares R 4.2.1 e
-Microsoft Excel.
+  Com isso, o procedimento de amostragem que foi adotado na realização do inventário após a análise dos dados foi a amostragem casual simples com parcelas circulares. Esse tipo de amostragem é um método utilizado em populações homogêneas e foi escolhido, justamente, por conta dessa característica do povoamento. Além disso, o procedimento de inventário florestal citado anteriormente foi repetido ao longo dos anos, de forma contínua, com o objetivo de processar os dados nos softwares R 4.2.1 e Microsoft Excel.
 
-  Sendo assim, para a classificação de sítios, foram avaliados os
-modelos hipsométricos apresentados a seguir, tanto na forma anamórfica
-quanto polimórfica.
+  Sendo assim, para a classificação de sítios, foram avaliados os modelos hipsométricos apresentados a seguir, tanto na forma anamórfica quanto polimórfica.
 
 \
 
 Chapman-Richards
 
--   anamórfico:
-    $Hd_2 = H d_1 * \left[\frac{ ( 1 - e ^ {\beta_1Id_1} ) ^ { \beta_2} } { ( 1 - e ^ {\beta_2Id_2} ) } \right]$
+-   anamórfico: $Hd_2 = H d_1 * \left[\frac{ ( 1 - e ^ {\beta_1Id_1} ) ^ { \beta_2} } { ( 1 - e ^ {\beta_2Id_2} ) } \right]$
 
--   polimórfico:
-    $Hd2 = \beta_0 * \left( \frac{ Hd_1 } {\beta_0} \right) ^{\frac{ log( 1 - e ^ {\beta*1Id_2 } ) } {log( 1 - e ^ {*\beta 1Id_1} ) } }$
+-   polimórfico: $Hd2 = \beta_0 * \left( \frac{ Hd_1 } {\beta_0} \right) ^{\frac{ log( 1 - e ^ {\beta*1Id_2 } ) } {log( 1 - e ^ {*\beta 1Id_1} ) } }$
 
 Schumacher
 
--   anamórfico:
-    $Hd_2 = Hd_1 * e^{\beta_1 \left( \frac{ 1 } { Id_2} - \frac{ 1 } { Id_1 } \right)}$
+-   anamórfico: $Hd_2 = Hd_1 * e^{\beta_1 \left( \frac{ 1 } { Id_2} - \frac{ 1 } { Id_1 } \right)}$
 
--   polimórfico:
-    $Hd_2 = \beta_0 \left( \frac{ Hd_1 } { \beta_0 }\right)^{ \frac{ Id_1 } { Id_2 } }$
+-   polimórfico: $Hd_2 = \beta_0 \left( \frac{ Hd_1 } { \beta_0 }\right)^{ \frac{ Id_1 } { Id_2 } }$
 
 Bailey-Clutter
 
--   anamórfico:
-    $Hd_ 2 = \frac{ Hd_1 } { e^{ \beta_1^{ ( Id_ 2 ^{\beta_2} - Id_1 ^{ \beta_2}) } } }$
+-   anamórfico: $Hd_ 2 = \frac{ Hd_1 } { e^{ \beta_1^{ ( Id_ 2 ^{\beta_2} - Id_1 ^{ \beta_2}) } } }$
 
--   polimórfico:
-    $Hd_2 = \beta_0 \left( \frac{ Hd_1 } { \beta_0 } \right )^{ \left( \frac{ Id_1 } { Id_2 } \right ) ^{ \beta_2 } }$
+-   polimórfico: $Hd_2 = \beta_0 \left( \frac{ Hd_1 } { \beta_0 } \right )^{ \left( \frac{ Id_1 } { Id_2 } \right ) ^{ \beta_2 } }$
 
-  A partir da avaliação feita com base na análise gráfica e atributos
-estatísticos gerados, foi escolhido o melhor modelo para prosseguir com
-a classificação de sítio. Dessa forma, a idade referência utilizada para
-classificar as parcelas medidas foi a de 72 meses, com sítios divididos
-em quatro classes.
+  A partir da avaliação feita com base na análise gráfica e atributos estatísticos gerados, foi escolhido o melhor modelo para prosseguir com a classificação de sítio. Dessa forma, a idade referência utilizada para classificar as parcelas medidas foi a de 72 meses, com sítios divididos em quatro classes.
 
-  Além disso, visando garantir a melhor escolha possível do modelo foram
-comparadas as estabilidades entre parcelas dos dois melhores modelos,
-escolhendo o modelo mais estável. E com isso, finalmente foi realizada a
-reclassificação analisando como a altura varia de acordo com a idade da
-floresta.
+  Além disso, visando garantir a melhor escolha possível do modelo foram comparadas as estabilidades entre parcelas dos dois melhores modelos, escolhendo o modelo mais estável. E com isso, finalmente foi realizada a reclassificação analisando como a altura varia de acordo com a idade da floresta.
 
- Desse modo, depois da reclassificação foram escolhidos três talhões (1
-sítio representando cada talhão), os quais apresentavam relação com a
-distância, ou seja, quanto melhor o sítio mais distante o talhão.
+ Desse modo, depois da reclassificação foram escolhidos três talhões (1 sítio representando cada talhão), os quais apresentavam relação com a distância, ou seja, quanto melhor o sítio mais distante o talhão.
 
 ## Prognose e rotação técnica de corte
 
-  Para estimar a produção do volume, foi realizada a prognose e rotação
-nas diferentes idades (24, 36, 48, 60, 72, 84, 96, 108, 120 meses) dos
-talhões analisados. Sendo que, foi utilizado o modelo volumétrico de
-Clutter (representado a seguir), do qual foram analisados seus
-respectivos atributos estatísticos e gráficos.
+  Para estimar a produção do volume, foi realizada a prognose e rotação nas diferentes idades (24, 36, 48, 60, 72, 84, 96, 108, 120 meses) dos talhões analisados. Sendo que, foi utilizado o modelo volumétrico de Clutter (representado a seguir), do qual foram analisados seus respectivos atributos estatísticos e gráficos.
 
 $lnV = \beta_0 + \beta_1 * \frac{1} {S} + \beta_2 * \frac{1} {Id2} + \beta_3 * \left(\frac{Id_1}{Id_2}\right) * ln(ab_1) + \beta_4 * \left( 1 - \frac{Id_1}{Id_2}\right) + \beta_5 * \left( 1 - \frac{Id_1}{Id_2}\right) * S$
 
@@ -180,9 +103,7 @@ A equação acima considera que:
 
 -   $ab$ = área basal (m³/ha).
 
-  Então, a partir das estimativas de área basal foram calculados o
-Incremento Corrente Anual (ICA) e o Incremento Médio Anual (IMA) para os
-talhões analisados, de acordo com as fórmulas apresentadas abaixo.
+  Então, a partir das estimativas de área basal foram calculados o Incremento Corrente Anual (ICA) e o Incremento Médio Anual (IMA) para os talhões analisados, de acordo com as fórmulas apresentadas abaixo.
 
 $IMA = \frac{V_{Id}} {Id}$
 
@@ -196,22 +117,9 @@ $Id$ = idade n.
 
 ## Análise econômica
 
-  Com o intuito de determinar a idade ótima de corte foi realizada uma
-análise econômica, considerando que os anos e custos das operações foram
-anexados neste documento, para facilitar a visualização das premissas
-usadas. Logo, a partir desses dados, foi gerada uma planilha de fluxo de
-caixa de cada talhão analisado, com valores de Receitas e Custos para
-cada ano de plantio. Desse modo, os seguintes valores foram calculados:
-Valor Presente das Receitas (VPR), Valor Presente dos Custos (VPC),
-Valor Presente Líquido (VPL), Valor Presente Líquido Infinito (VPL inf),
-Custo Médio da Produção (CMPr), Relação Benefício Custo (B/C), Valor
-Esperado da Terra (VET) e a Taxa Interna de Retorno (TIR).
+  Com o intuito de determinar a idade ótima de corte foi realizada uma análise econômica, considerando que os anos e custos das operações foram anexados neste documento, para facilitar a visualização das premissas usadas. Logo, a partir desses dados, foi gerada uma planilha de fluxo de caixa de cada talhão analisado, com valores de Receitas e Custos para cada ano de plantio. Desse modo, os seguintes valores foram calculados: Valor Presente das Receitas (VPR), Valor Presente dos Custos (VPC), Valor Presente Líquido (VPL), Valor Presente Líquido Infinito (VPL inf), Custo Médio da Produção (CMPr), Relação Benefício Custo (B/C), Valor Esperado da Terra (VET) e a Taxa Interna de Retorno (TIR).
 
-  A análise econômica foi realizada de forma principal através do VPL,
-considerando um horizonte infinito (VPL infinito), pois dessa maneira é
-possível comparar projetos com durações diferentes. Dessa forma os
-projetos foram avaliados. Algumas das fórmulas estão apresentadas
-abaixo:
+  A análise econômica foi realizada de forma principal através do VPL, considerando um horizonte infinito (VPL infinito), pois dessa maneira é possível comparar projetos com durações diferentes. Dessa forma os projetos foram avaliados. Algumas das fórmulas estão apresentadas abaixo:
 
 $$VPL = VP - VPC$$
 
@@ -249,16 +157,11 @@ $n$ = duração do projeto.
 
  
 
-  Esses valores gerados serão devidamente comentados posteriormente
-neste relatório, de acordo com as interpretações geradas e suas
-motivações.
+  Esses valores gerados serão devidamente comentados posteriormente neste relatório, de acordo com as interpretações geradas e suas motivações.
 
 ## Análise de sensibilidade
 
-  Portanto, com a análise econômica florestal realizada, foram
-especulados cenários existentes e suas respectivas alterações em valores
-como o custo da terra, custos de venda da madeira e custos atrelados ao
-transporte da madeira.
+  Portanto, com a análise econômica florestal realizada, foram especulados cenários existentes e suas respectivas alterações em valores como o custo da terra, custos de venda da madeira e custos atrelados ao transporte da madeira.
 
 # Resultados e discussão
 
@@ -270,6 +173,7 @@ library( cowplot )
 library( gridExtra )
 library( qqplotr )
 library( png )
+library( openxlsx )
 
 dados_npar <- read.csv2( "ifc.csv" )
 names( dados_npar )
@@ -409,17 +313,7 @@ cfschana <- as.vector( coef( ajschana ) )
 
 ```
 
-  A Tabela 1 apresenta todos os coeficientes obtidos de cada modelo
-testado e seus respectivos valores de erro padrão residual. Antes de
-analisar os resultados, é importante salientar que quanto maior o erro
-padrão residual mais distante do ideal o modelo se encontra, ou seja, os
-resíduos estão mais distantes do valor real. Desse modo, comparando os
-modelos de forma **isolada a partir dessa métrica estatística** os
-modelos de Bailey-Clutter polimórfico e Chapman-Richards polimórfico,
-obtiveram os melhores resultados para as estimativas realizadas. Sendo
-possível destacar o polimorfismo como a forma que mais se aproxima do
-ideal em cada modelo testado, o que é esperado teoricamente,
-considerando os fatores biológicos que afetam as florestas.
+  A Tabela 1 apresenta todos os coeficientes obtidos de cada modelo testado e seus respectivos valores de erro padrão residual. Antes de analisar os resultados, é importante salientar que quanto maior o erro padrão residual mais distante do ideal o modelo se encontra, ou seja, os resíduos estão mais distantes do valor real. Desse modo, comparando os modelos de forma **isolada a partir dessa métrica estatística** os modelos de Bailey-Clutter polimórfico e Chapman-Richards polimórfico, obtiveram os melhores resultados para as estimativas realizadas. Sendo possível destacar o polimorfismo como a forma que mais se aproxima do ideal em cada modelo testado, o que é esperado teoricamente, considerando os fatores biológicos que afetam as florestas.
 
 | Modelos                        | $\beta_0$                 | $\beta_1$                 | $\beta_2$                | Erro padrão residual (%)   |
 |--------------------------------|---------------------------|---------------------------|--------------------------|----------------------------|
@@ -691,31 +585,11 @@ res_norm_plot
 
 \newpage
 
-  Dessa forma, o modelo de Chapman-Richards foi o modelo escolhido, pois
-além do seu desempenho através da métrica citada anteriormente ter sido
-o superior, esse foi o modelo que apresentou a melhor distribuição de
-resíduos devido os resultados estarem mais agrupados em torno do zero
-(Figura 1), quando comparado com as distribuições dos demais modelos
-testados a um nível de significância de 5%, os quais estão anexados
-neste documento.
+  Dessa forma, o modelo de Chapman-Richards foi o modelo escolhido, pois além do seu desempenho através da métrica citada anteriormente ter sido o superior, esse foi o modelo que apresentou a melhor distribuição de resíduos devido os resultados estarem mais agrupados em torno do zero (Figura 1), quando comparado com as distribuições dos demais modelos testados a um nível de significância de 5%, os quais estão anexados neste documento.
 
-  Ademais, também na Figura 1, é foram geradas faixas de confiança
-simultâneas com base na distribuição normal, técnica conhecida como
-*Pointwise*; faixas de confiança pontuais com base em um bootstrap
-paramétrico; bandas de confiança simultâneas com base em uma inversão do
-teste de Kolmogorov-Smirnov (KS) e faixas de confiança sensíveis à
-cauda, como proposto por [@aldor2013power]. E a reta estimada estava
-contida dentro desses intervalos, para todas as técnicas citadas,
-afirmando normalidade.
+  Ademais, também na Figura 1, é foram geradas faixas de confiança simultâneas com base na distribuição normal, técnica conhecida como *Pointwise*; faixas de confiança pontuais com base em um bootstrap paramétrico; bandas de confiança simultâneas com base em uma inversão do teste de Kolmogorov-Smirnov (KS) e faixas de confiança sensíveis à cauda, como proposto por [@aldor2013power]. E a reta estimada estava contida dentro desses intervalos, para todas as técnicas citadas, afirmando normalidade.
 
-  Outrossim, com o intuito de comparar as estabilidades entre parcelas
-dos modelos, foi processada a classificação de sítio. Com isso, foi
-possível gerar comparações como as destacadas na frequência das mudanças
-de classe observadas na Tabela 2, a qual apresenta a comparação entre os
-dois melhores modelos. Sendo que, essa mesma análise para os demais
-modelos está disponível em anexo deste documento, assim como os gráficos
-das curvas de índice de sítio das alturas dominantes, distribuídas em
-intervalos de classes, em função do tempo para cada modelo.
+  Outrossim, com o intuito de comparar as estabilidades entre parcelas dos modelos, foi processada a classificação de sítio. Com isso, foi possível gerar comparações como as destacadas na frequência das mudanças de classe observadas na Tabela 2, a qual apresenta a comparação entre os dois melhores modelos. Sendo que, essa mesma análise para os demais modelos está disponível em anexo deste documento, assim como os gráficos das curvas de índice de sítio das alturas dominantes, distribuídas em intervalos de classes, em função do tempo para cada modelo.
 
 | Modelos                        | Migração de classes | Ocorrências | Porcentagem |
 |--------------------------------|---------------------|-------------|-------------|
@@ -729,15 +603,9 @@ intervalos de classes, em função do tempo para cada modelo.
 
 : Teste de estabilidade das parcelas para os melhores modelos testados.
 
-  O modelo Chapman-Richards Polimórfico apesar de estar um pouco abaixo
-da estabilidade observada no modelo de Bailey-Clutter, os dados
-apresentam pouca diferança, e por conta da sua superioridade nos demais
-quesitos observados, o modelo escolhido foi o de Chapman-Richards
-polimórfico.
+  O modelo Chapman-Richards Polimórfico apesar de estar um pouco abaixo da estabilidade observada no modelo de Bailey-Clutter, os dados apresentam pouca diferança, e por conta da sua superioridade nos demais quesitos observados, o modelo escolhido foi o de Chapman-Richards polimórfico.
 
-![Distribuição das alturas dominantes em função da idade para modelo
-Chapman-Richards Polimórfico e seus respectivos
-limites.](curva_indice_sitio_cr_polimorfico.jpeg){width="70%"}
+![Distribuição das alturas dominantes em função da idade para modelo Chapman-Richards Polimórfico e seus respectivos limites.](curva_indice_sitio_cr_polimorfico.jpeg){width="70%"}
 
 ## Prognose e idade ótima de corte
 
@@ -843,9 +711,7 @@ ifc_ultmed$ica10 <- with( ifc_ultmed, vtcc10 - vtcc9 )
 
 ```
 
-  Portanto, com a reclassificação dos sítios, foram selecionadas as três
-fazendas: Júlio de Mesquita, Santa Bárbara e Montreal. As quais tiveram
-seus principais dados explicitados na Tabela 3.
+  Portanto, com a reclassificação dos sítios, foram selecionadas as três fazendas: Júlio de Mesquita, Santa Bárbara e Montreal. As quais tiveram seus principais dados explicitados na Tabela 3.
 
 | Fazenda           | Talhão | Parcela | Idade (meses) | Área basal (cm²) | Sítio | Distância (km) |
 |-------------------|--------|---------|---------------|------------------|-------|----------------|
@@ -853,16 +719,9 @@ seus principais dados explicitados na Tabela 3.
 | Santa Bárbara     | 41     | 71      | 61.86         | 30.15            | 28    | 114.97         |
 | Júlio de Mesquita | 103    | 196     | 75.76         | 31.83            | 30.3  | 152.06         |
 
-: Informações das fazendas em relação às distâncias para a fábrica
-contratante.
+: Informações das fazendas em relação às distâncias para a fábrica contratante.
 
- Para o cálculo das estimativas de volume, foi usado o modelo de
-Clutter, o qual gerou os parâmetros demonstrados na Tabela 4, sendo
-posteriormente avaliado pelas métricas dispostas na Tabela 5, as quais
-apresentaram uma boa confiabilidade, considerando que 95.26% das
-variações da variável dependente são explicadas pelas variações das
-variáveis independentes. Além disso, também foi realizada a análise gráfica deste modelo, a qual foi
-dentro do esperado em relação à variância, afirmando normalidade para os diferentes intervalos estatísticos testados (Figura 3).
+ Para o cálculo das estimativas de volume, foi usado o modelo de Clutter, o qual gerou os parâmetros demonstrados na Tabela 4, sendo posteriormente avaliado pelas métricas dispostas na Tabela 5, as quais apresentaram uma boa confiabilidade, considerando que 95.26% das variações da variável dependente são explicadas pelas variações das variáveis independentes. Além disso, também foi realizada a análise gráfica deste modelo, a qual foi dentro do esperado em relação à variância, afirmando normalidade para os diferentes intervalos estatísticos testados (Figura 3).
 
 |        | $\beta_0$   | $\beta_1$  | $\beta_2$  | $\beta_3$   | $\beta_4$   | $\beta_5$   |
 |--------|-------------|------------|------------|-------------|-------------|-------------|
@@ -875,7 +734,6 @@ dentro do esperado em relação à variância, afirmando normalidade para os dif
 | Clutter | `r syx_log`               | `r R2` | `r ifurnival_perc`     |
 
 : Estatísticas do modelo de Clutter.
-
 
 ```{r}
 #| fig-cap: Gráfico quantil-quantil e gráfico da distribuição de resíduos do modelo de Clutter.
@@ -913,11 +771,8 @@ res_norm_plot <- ggdraw( ) +
   draw_image( img, x = 0.35, y = 0.02, width = 0.35, height = 0.2 )  
 ```
 
-
-
-
 ```{r}
-#| fig-cap: Curva de Crescimento e Curvas de IMA e ICA com Idade Ótima de Corte destacado em ambos gráficos da Fazenda Montreal.
+#| fig-cap: Curva de Crescimento e Curvas de IMA e ICA com Idade Ótima de Corte destacada em ambos gráficos da Fazenda Montreal.
 
 #Dados da última medição parcela 7
 #Idade presente (meses)
@@ -995,7 +850,7 @@ text( 65, 60, paste( round( iocs, 2 ), " anos" ), cex = 0.8 )
 ```
 
 ```{r}
-#| fig-cap: Curva de Crescimento e Curvas de IMA e ICA com Idade Ótima de Corte destacado em ambos gráficos da Fazenda Santa Bárbara.
+#| fig-cap: Curva de Crescimento e Curvas de IMA e ICA com Idade Ótima de Corte destacada em ambos gráficos da Fazenda Santa Bárbara.
 
 # -- Fazenda 
 # id1 para talhao 41 é = 61,86
@@ -1079,7 +934,7 @@ text( 60, 90, paste( round( iocs, 2 ), " anos" ), cex = 0.8 )
 ```
 
 ```{r}
-#| fig-cap: Curva de Crescimento e Curvas de IMA e ICA com Idade Ótima de Corte destacado em ambos gráficos da Fazenda Júlio de Mesquita.
+#| fig-cap: Curva de Crescimento e Curvas de IMA e ICA com Idade Ótima de Corte destacada em ambos gráficos da Fazenda Júlio de Mesquita.
 
 # -- Fazenda 
 # id1 para talhao 103 é = 75,76
@@ -1160,10 +1015,113 @@ text( 65, 100, paste( round( iocs, 2 ), " anos" ), cex = 0.8 )
 
 ```
 
-\  A partir das Figuras 4, 5 e 6, torna-se perceptível as diferenças na idade técnica de corte (período de maior Incremento Médio Anual) para cada fazenda, considerando a relação inversa com a qualidade do sítio, de acordo com o que se espera na teoria, quanto melhor o sítio maior o IMA (Incremento Médio Anual), logo, mais rápido as plantas atingirão a idade ótima para corte (IOC/ITC). No entanto, a fazenda Santa Bárbara, a qual está contida no sítio 28, apresentou uma IOC mais curta do que a fazenda Júlio de Mesquita, a qual está contida no sítio 30.3. Ou seja, é possível inferir que devido às condições menos favoráveis existentes na fazenda Santa Bárbara, não vale a pena manter a floresta em pé, devido a sua permanência no campo não representar um maior desenvolvimento.
-
+  A partir das Figuras 4, 5 e 6, torna-se perceptível as diferenças na idade técnica de corte (período de maior Incremento Médio Anual) para cada fazenda, considerando a relação inversa com a qualidade do sítio, de acordo com o que se espera na teoria, quanto melhor o sítio maior o IMA (Incremento Médio Anual), logo, mais rápido as plantas atingirão a idade ótima para corte (IOC/ITC). No entanto, a fazenda Santa Bárbara, a qual está contida no sítio 28, apresentou uma IOC mais curta do que a fazenda Júlio de Mesquita, a qual está contida no sítio 30.3. Ou seja, é possível inferir que devido às condições menos favoráveis existentes na fazenda Santa Bárbara, não vale a pena manter a floresta em pé, devido a sua permanência no campo não representar um maior desenvolvimento.
 
 # Análise econômica
+
+  É importante salientar que análises ecônomicas de plantios florestais, assim como em outras áreas variam drasticamente de acordo com o período e região a qual são levantados os custos. Desse modo, na Tabela 6 estão apresentados esses custos referentes ao período do levantamento realizado.
+
+| Itens                    | Ano   | Valor            |
+|--------------------------|-------|------------------|
+| Implantação              | 0     | 8000.00 (R\$/ha) |
+| Capina                   | 1     | 275.00 (R\$/ha)  |
+| Roçada                   | 2     | 135.00 (R\$/ha)  |
+| Bateção pré-corte        | Corte | 100.00 (R\$/ha)  |
+| Proteção e consevação    | Corte | 40.00 (R\$/ha)   |
+| Colheita                 | Corte | 20.00 (R\$/ha)   |
+| Venda                    | Corte | 140.00 (R\$/ha)  |
+| Despesas administrativas | \-    | 20.00 (R\$/ha)   |
+
+: Informações dos custos de manutenção/implantação do plantio.
+
+  Desse modo, foi elaborado a análise de viabilidade econômica tendo como o principal atributo o Valor Presente Líquido (VPL). O qual é um método capaz de trazer para data zero, todos os fluxos de caixa de um projeto de investimento e então somá-los ao valor do investimento realizando inicialmente, para isso é utilizado a Taxa Mínima de Atratividade (TMA) do projeto, a qual foi considerada 10%.
+
+  Na Tabela 7 estão os valores estimados de frete, os quais variam de acordo com cada fazenda e suas respectivas distâncias, e o custo da terra. Esse último apresenta uma grande variação na região das fazendas, segundo os valores cotados com base no Instituto de Economia Agrícola (IEA) para o ano de 2021, já que no ano de 2022 ainda não foram realizados levantamentos pelo IEA [@precor].
+
+| Fazendas          | Cidade  | Custo da Terra (R\$/ha) | Transporte (R\$/km/m³) |
+|-------------------|---------|-------------------------|------------------------|
+| Montreal          | Buri    | 21000                   | 0.10                   |
+| Santa Bárbara     | Itaberá | 17000                   | 0.11                   |
+| Júlio de Mesquita | Itaí    | 15000                   | 0.112                  |
+
+: Informações atreladas aos custos da Terra e frete.
+
+```{r}
+#| fig-cap: "VPL das Fazendas"
+#| fig-subcap:
+#|   - "Fazenda Montreal"
+#|   - "Fazenda Santa Bárbara"
+#|   - "Fazenda Júlio de Mesquita"
+#| layout: [[50, 50], [100]
+
+
+options(warn=-1)
+talhao7 <- read.xlsx( "custos_talhao_7_parcela_15.xlsx", sheet = "custos_talhao_7_parcela_15" )
+talhao41 <- read.xlsx( "custos_talhao_41_parcela_71.xlsx", sheet = "custos_talhao_41_parcela_71" )
+talhao103 <- read.xlsx( "custos_talhao_103_parcela_196.xlsx", sheet = "custos_talhao_103_parcela_196" )
+
+vpl_talhao_7 <- as.numeric( talhao7[ talhao7$`Terra.(R$/ha)` == "VPL", ] )
+vpl_talhao_41 <- as.numeric( talhao41[ talhao41$`Terra.(R$/ha)` == "VPL", ] )
+vpl_talhao_103 <- as.numeric( talhao103[ talhao103$`Terra.(R$/ha)` == "VPL", ] )
+
+vpl_talhao_7 <- vpl_talhao_7[ 2:9 ]
+vpl_talhao_41 <- vpl_talhao_41[ 2:9 ]
+vpl_talhao_103 <- vpl_talhao_103[ 2:9 ]
+
+anos <- 3:10
+
+df_vpl_talhao_7 <- data.frame( VPL = vpl_talhao_7, anos = anos )
+df_vpl_talhao_41 <- data.frame( VPL = vpl_talhao_41, anos = anos )
+df_vpl_talhao_103 <- data.frame( VPL = vpl_talhao_103, anos = anos )
+
+
+
+theme_chesTree <- theme_bw( ) +
+  theme( panel.grid.major = element_line( color = "gray70", linetype = "dashed" ),
+         panel.grid.minor = element_blank( ),
+         axis.title = element_text( size = rel( 0.6 ) ),
+         axis.text = element_text( size = rel( 0.6 ) ),
+         legend.position = c( 0, 1 ),
+         legend.justification = c( -0.05, 1.02 ),
+         legend.title = element_blank( ),
+         legend.text = element_text( size = rel( 0.8 ) ) )
+
+
+ggplot( data = df_vpl_talhao_7, aes( x = anos, y = VPL, label = round( VPL, 2 ) ) ) +
+  geom_point( ) +
+  geom_text( data = df_vpl_talhao_7[ df_vpl_talhao_7$VPL < 0, ], colour = "red", vjust = -0.1 ) +
+  geom_text( data = df_vpl_talhao_7[ df_vpl_talhao_7$VPL > 0, ], colour = "green" ) +
+  geom_line( ) +
+  theme_chesTree
+
+
+
+ggplot( data = df_vpl_talhao_41, aes( x = anos, y = VPL, label = round( VPL, 2 ) ) ) +
+  geom_point( ) +
+  geom_text( data = df_vpl_talhao_41[ df_vpl_talhao_41$VPL < 0, ], colour = "red", vjust = -0.1 ) +
+  geom_text( data = df_vpl_talhao_41[ df_vpl_talhao_41$VPL > 0, ], colour = "green" ) +
+  geom_line( ) +
+  theme_chesTree
+
+ggplot( data = df_vpl_talhao_103, aes( x = anos, y = VPL, label = round( VPL, 2 ) ) ) +
+  geom_point( ) +
+  geom_text( data = df_vpl_talhao_103[ df_vpl_talhao_103$VPL < 0, ], colour = "red", vjust = -0.1 ) +
+  geom_text( data = df_vpl_talhao_103[ df_vpl_talhao_103$VPL > 0, ], colour = "green" ) +
+  geom_line( ) +
+  theme_chesTree
+
+# margin <- theme( plot.margin = unit( c( 0.1, 0.1, 0.1, 0.2 ), "cm" ) )
+# vpls <- grid.arrange( grobs = lapply( list( plot_vpl_talhao_7, plot_vpl_talhao_41,
+#                                             plot_vpl_talhao_103 ), "+", margin ),
+#                       ncol = 3 )
+# # anexos
+# ggdraw( ) +
+#   draw_plot( vpls, x = 0, y = 0.15, width = 1, height = 0.85 ) +
+#   draw_image( img, x = 0.35, y = 0.002, width = 0.35, height = 0.2 )
+
+```
+
+algo
 
 ## Sensibilidade econômica
 
