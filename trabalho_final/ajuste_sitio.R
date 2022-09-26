@@ -6,14 +6,14 @@ library( cowplot )
 library( gridExtra )
 library( qqplotr )
 
-dados_npar <- read.csv2( "trabalho_final/ifc.csv" )
+dados_npar <- read.csv2( "ifc.csv" )
 names( dados_npar )
 dados_npar <- dados_npar[ c( "parcela", "idade", "hdom", "ab", "vtsc", "vtcc" ) ]
 
 dados <- cmrinvflor::parear_seqmed( dados_npar )
 head( dados )
 
-img <- image_read( "trabalho_final/chestreelogo.PNG" )
+img <- image_read( "chestreelogo.PNG" )
 
 theme_chesTree <- theme_bw( ) +
   theme( panel.grid.major = element_line( color = "gray70", linetype = "dashed" ),

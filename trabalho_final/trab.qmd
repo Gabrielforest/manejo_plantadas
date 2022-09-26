@@ -1,5 +1,5 @@
 ---
-title: "Classificação de Sítio e Análise Econômica das Fazendas"
+title: \large Classificação de Sítio e Análise Econômica das Fazendas Montreal, Santa bárbara e Júlio de Mesquita
 author: Gabriel de Freitas Pereira
 lang: pt
 execute:
@@ -161,7 +161,7 @@ $n$ = duração do projeto.
 
 ## Análise de sensibilidade
 
-  Portanto, com a análise econômica florestal realizada, foram especulados cenários existentes e suas respectivas alterações em valores como o custo da terra, custos de venda da madeira e custos atrelados ao transporte da madeira.
+  Portanto, com a análise econômica florestal realizada, foram especulados cenários existentes e suas respectivas alterações em valores na taxa de juros.
 
 # Resultados e discussão
 
@@ -609,6 +609,8 @@ res_norm_plot
 
 ## Prognose e idade ótima de corte
 
+\ Baseado na reclassificação dos sítios, para cada parcela, foram selecionadas as três fazendas (Tabela 3) em função da distância da fábrica, situada em Guapiara-SP.
+
 ```{r}
 #Ajuste do modelo de Clutter
 ifc <- read.csv2( "ifc.csv" )
@@ -711,7 +713,7 @@ ifc_ultmed$ica10 <- with( ifc_ultmed, vtcc10 - vtcc9 )
 
 ```
 
-  Portanto, com a reclassificação dos sítios, foram selecionadas as três fazendas: Júlio de Mesquita, Santa Bárbara e Montreal. As quais tiveram seus principais dados explicitados na Tabela 3.
+  Portanto, foram selecionadas as três fazendas: Júlio de Mesquita, Santa Bárbara e Montreal. As quais tiveram seus principais dados explicitados na Tabela 3.
 
 | Fazenda           | Talhão | Parcela | Idade (meses) | Área basal (cm²) | Sítio | Distância (km) |
 |-------------------|--------|---------|---------------|------------------|-------|----------------|
@@ -1047,13 +1049,12 @@ text( 65, 100, paste( round( iocs, 2 ), " anos" ), cex = 0.8 )
 : Informações atreladas aos custos da Terra e frete.
 
 ```{r}
-#| fig-cap: "VPL das Fazendas"
-#| fig-subcap:
+#| label: fig-charts
+#| fig-cap: Fazendas com VPL negativo.
+#| fig-subcap: 
 #|   - "Fazenda Montreal"
 #|   - "Fazenda Santa Bárbara"
-#|   - "Fazenda Júlio de Mesquita"
-#| layout: [[50, 50], [100]
-
+#| layout-ncol: 2
 
 options(warn=-1)
 talhao7 <- read.xlsx( "custos_talhao_7_parcela_15.xlsx", sheet = "custos_talhao_7_parcela_15" )
@@ -1079,8 +1080,8 @@ df_vpl_talhao_103 <- data.frame( VPL = vpl_talhao_103, anos = anos )
 theme_chesTree <- theme_bw( ) +
   theme( panel.grid.major = element_line( color = "gray70", linetype = "dashed" ),
          panel.grid.minor = element_blank( ),
-         axis.title = element_text( size = rel( 0.6 ) ),
-         axis.text = element_text( size = rel( 0.6 ) ),
+         axis.title = element_text( size = rel( 0.8 ) ),
+         axis.text = element_text( size = rel( 0.8 ) ),
          legend.position = c( 0, 1 ),
          legend.justification = c( -0.05, 1.02 ),
          legend.title = element_blank( ),
@@ -1094,14 +1095,28 @@ ggplot( data = df_vpl_talhao_7, aes( x = anos, y = VPL, label = round( VPL, 2 ) 
   geom_line( ) +
   theme_chesTree
 
-
-
 ggplot( data = df_vpl_talhao_41, aes( x = anos, y = VPL, label = round( VPL, 2 ) ) ) +
   geom_point( ) +
   geom_text( data = df_vpl_talhao_41[ df_vpl_talhao_41$VPL < 0, ], colour = "red", vjust = -0.1 ) +
   geom_text( data = df_vpl_talhao_41[ df_vpl_talhao_41$VPL > 0, ], colour = "green" ) +
   geom_line( ) +
   theme_chesTree
+
+# margin <- theme( plot.margin = unit( c( 0.1, 0.1, 0.1, 0.2 ), "cm" ) )
+# vpls <- grid.arrange( grobs = lapply( list( plot_vpl_talhao_7, plot_vpl_talhao_41,
+#                                             plot_vpl_talhao_103 ), "+", margin ),
+#                       ncol = 2 )
+# # anexos
+# ggdraw( ) +
+#   draw_plot( vpls, x = 0, y = 0.15, width = 1, height = 0.85 ) +
+#   draw_image( img, x = 0.35, y = 0.002, width = 0.35, height = 0.2 )
+
+```
+
+
+```{r}
+#| fig-cap: VPL fazenda Júlio de Mesquita.
+#| layout-ncol: 1
 
 ggplot( data = df_vpl_talhao_103, aes( x = anos, y = VPL, label = round( VPL, 2 ) ) ) +
   geom_point( ) +
@@ -1110,22 +1125,87 @@ ggplot( data = df_vpl_talhao_103, aes( x = anos, y = VPL, label = round( VPL, 2 
   geom_line( ) +
   theme_chesTree
 
-# margin <- theme( plot.margin = unit( c( 0.1, 0.1, 0.1, 0.2 ), "cm" ) )
-# vpls <- grid.arrange( grobs = lapply( list( plot_vpl_talhao_7, plot_vpl_talhao_41,
-#                                             plot_vpl_talhao_103 ), "+", margin ),
-#                       ncol = 3 )
-# # anexos
-# ggdraw( ) +
-#   draw_plot( vpls, x = 0, y = 0.15, width = 1, height = 0.85 ) +
-#   draw_image( img, x = 0.35, y = 0.002, width = 0.35, height = 0.2 )
+```
+
+\  De acordo com os resultados das Figuras 7 e 8, gerados no Excel (Tabelas  em anexo), torna-se indubitável que a fazenda Júlio de Mesquita, a qual possui o melhor sítio e está mais distante da fábrica em Guapiara-SP, apresentou o maior VPL aos 6 anos (R$3.399,39/ha). Enquanto que as demais fazendas apresentaram VPL negativo em todas as idades, indicando um negócio inviável, nos parâmetros econômicos utilizados neste relatório.
+
+\ Os resultados da TIR (14,96%) da fazenda Júlio de Mesquita superam a Taxa Mínima de Atratividade (TMA) de 10%, a partir do sexto ano de rotação até o nono ano. Demonstrando viabilidade econômica durante este período, indicando que enquanto a TMA for menor que a TIR é recomendado investir no plantio florestal, de acordo com as estimativas realizadas. Já as demais fazendas diante dessa perspectiva, são inviáveis economicamente, ou seja, apresentam TIR abaixo da TMA. A Figura 9 ilustra a IOC para o VPL infinito, cujo valor permite comparar os diferentes anos de corte para um projeto com horizonte infinito.
+
+```{r}
+#| fig-cap: IOC para VPL infinito estimado da Fazenda Júlio de Mesquita.
+
+# custo da terra deve ser importado do excel sendo 0!
+fc <- read.xlsx( "custos_talhao_103_parcela_196.xlsx", sheet = "Plan2", rowNames = FALSE )
+valor_terra <- 15000
+
+# taxa de juros
+tj <- 0.1
+
+fc$custo_sem_terra <- fc$custo
+ii <- fc$idade != 0
+fc$custo[ ii ] <- fc$custo_sem_terra[ ii ] + valor_terra * tj
+
+# avaliação econômica
+ae <- avecon( fc[, 1:5 ], tj, valor_terra, TRUE )
+j <- match( max( ae$vplinf ), ae$vplinf )
+
+# idade ótima de corte VPL infinito
+plot( ae$projeto, ae$vplinf, type = "b", col = 1 , xlab = "Idade de Rotação", 
+      ylab = "VPL infinito" )
+abline( v = ae$projeto[ j ], lty = 2 )
+legend("topright", legend = "IOC", lty = 2)
 
 ```
 
-algo
-
 ## Sensibilidade econômica
 
+\ As taxas de juros são o principal impacto nas florestas brasileiras quando comparamos com aquelas situados fora do país, isso se deve ao fato de que as taxas no Brasil são muito elevadas, logo, se as florestas crescessem na velocidade das florestas do Canadá por exemplo, com rotações de até 70 anos, ninguém no Brasil investiria em florestas.
+Sendo assim, considerando a sua possível grande variação na taxa de juros e seu alto impacto mesmo em curtos períodos no país tornando alguns projetos inviáveis. Faz-se necessário portanto partindo deste princípio, a análise de sensibilidade, facilitando ao investidor e permitindo uma visão holística do projeto para diferentes cenários relacionados as taxas de juros (Figura 10).    
+
+
+```{r}
+#| fig-cap: Variações no VPL infinito para diferentes taxas de juros.
+
+# custo da terra deve ser importado do excel sendo 0!
+fc <- read.xlsx( "custos_talhao_103_parcela_196.xlsx", sheet = "Plan2", rowNames = FALSE )
+fc$custo_sem_terra <- fc$custo
+
+# Simulação, variando taxa de juros
+valor_terra <- 10000
+tj <- seq( from = 0.09, to = 0.13, by = 0.01 )
+
+ii <- fc$idade != 0
+
+for( i in 1:length( tj ) ) {
+  
+  fc$custo[ ii ] <- fc$custo_sem_terra[ ii ] + valor_terra * tj[ i ]
+  
+  # avaliação econômica
+  ae <- avecon( fc[, 1:5 ], tj = tj[ i ], valor_terra, TRUE )
+  
+  # idade ótima de corte
+  if( i == 1 ){
+    with( ae, plot( projeto, vplinf, 
+                    xlab = "Idade de Rotação", 
+                    ylab = "VPL infinito",
+                    ylim = c( 0, max( ae$vplinf ) ), 
+                    type = "b", col = i ) ) 
+  } else {
+    with( ae, lines( projeto, vplinf, type = "b", col = i ) )
+  }
+  
+}
+
+legend( "topright", legend = paste0( tj*100, "%"), text.col = 1:length(tj), bty ="n", horiz = T )
+```
+
+\ Esses dados são referentes apenas à fazenda escolhida na seção de Análise Econômica, devido a inviabilidade dos demais projetos em relação a fazenda Júlio de Mesquita. Além disso, a TIR variou entre 15,94% (9% taxa de juros) à 12,06% (13% taxa de juros), indicando a viabilidade do projeto em diferentes cenários de variação da taxa de juros.  
+
+\newpage
+
 # Conclusão
+
+\ Dessa forma, foi possível concluir que o projeto com aquisição da terra com o objetivo de realizar plantio florestal de _Eucalyptus_ sp.; no município de Itaí, fazenda Júlio de Mesquita, demonstrou-se viável em diferentes cenários, através das premissas levantadas neste relatório. Isso se deve aos indicativos econômicos e estatísticos estimados pelo autor para chegar na recomendação final, considerando que os demais projetos nas cidades de Buri e Itaberá não apresentaram viabilidade econômica para abastecer a fábrica situada em Guapiara-SP.
 
 \newpage
 
@@ -1171,3 +1251,20 @@ norm_plot_anexos
 |                              | 2                   | 17          | 7.49        |
 
 : Teste de estabilidade das parcelas para os modelos não selecionados
+
+
+![Valores gerados para talhão 7 - Fazenda Montreal.](excel_custos_7.PNG)
+
+![Valores gerados para talhão 41 - Fazenda Santa Bárbara.](excel_custos_41.PNG)
+
+![Valores gerados para talhão 103 - Fazenda Júlio de Mesquita.](excel_custos_103.PNG)
+
+![Distribuição das alturas dominantes em função da idade para modelo Chapman-Richards anamórfico e seus respectivos limites.](crana.png)
+
+![Distribuição das alturas dominantes em função da idade para modelo Bailey-Clutter polimórfico e seus respectivos limites.](bc_poli.png)
+
+![Distribuição das alturas dominantes em função da idade para modelo Bailey-Clutter anamórfico e seus respectivos limites.](bc_ana.png)
+
+![Distribuição das alturas dominantes em função da idade para modelo Schumacher polimórfico e seus respectivos limites.](sch_poli.png)
+
+![Distribuição das alturas dominantes em função da idade para modelo Schumacher anamórfico e seus respectivos limites.](sch_ana.png)

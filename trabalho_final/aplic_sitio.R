@@ -1,10 +1,10 @@
 # Curvas de sítio pelo método da diferença algébrica
 
-source( "trabalho_final/ajuste_sitio.R" )
+source( "C:/Users/OppenSocial/Desktop/manejo_plantadas/trabalho_final/ajuste_sitio.R" )
 
 library( cmrinvflor )
 
-ifc <- read.csv2( "trabalho_final/ifc.csv" )
+ifc <- read.csv2( "ifc.csv" )
 head( ifc )
 
 ifc <- ifc[ ,c( "parcela","idade", "hdom" ) ]
